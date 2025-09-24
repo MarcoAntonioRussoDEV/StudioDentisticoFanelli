@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
     outputFileTracingRoot: path.join(__dirname),
     output: "export",
     trailingSlash: true,
+    basePath: "/StudioDentisticoFanelli",
+    assetPrefix: "/StudioDentisticoFanelli",
     images: {
         unoptimized: true,
     },
