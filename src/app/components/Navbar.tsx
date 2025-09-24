@@ -14,7 +14,7 @@ const Navbar = () => {
                 >
                     Studio Dentistico Fanelli
                 </Link>
-                <div className="flex justify-between gap-4">
+                <div className="flex justify-between gap-4 font-semibold">
                     <Link
                         className="hover:underline"
                         href="#services"

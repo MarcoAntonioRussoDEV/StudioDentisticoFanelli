@@ -1,75 +1,19 @@
 import Image from "next/image";
 import Button from "./components/Button";
-import {
-    Circle,
-    Crown,
-    FileQuestion,
-    HeartHandshake,
-    MapPin,
-    Phone,
-    RefreshCw,
-    Shield,
-    Smile,
-    Sparkles,
-} from "lucide-react";
+import { Circle, MapPin, Phone } from "lucide-react";
 import ServicesCard from "./components/ServicesCard";
-import { Service } from "./model/Service";
+import IconBox from "./components/IconBox";
+import Maps from "./components/Maps";
+import Footer from "./components/Footer";
+import { aboutStats } from "./lib/data/aboutStats";
+import { contacts } from "./lib/data/contacts";
+import { services } from "./lib/data/services";
 
 export default function Home() {
-    const services: Service[] = [
-        {
-            title: "Igiene e Prevenzione",
-            description:
-                "Pulizia professionale, sbiancamento e trattamenti preventivi per mantenere il sorriso sano.",
-            Icon: Smile,
-            solutions: [
-                "Detartrasi",
-                "Fluoroprofilassi",
-                "Sbiancamento dentale",
-                "Sigillature",
-            ],
-        },
-        {
-            title: "Protesi Dentarie",
-            description:
-                "Soluzioni personalizzate per la sostituzione dei denti mancanti, migliorando funzionalità ed estetica.",
-            Icon: Crown,
-            solutions: ["Corone", "Ponti", "Protesi mobili"],
-        },
-        {
-            title: "Estetica Dentale",
-            description:
-                "Trattamenti per migliorare l'aspetto del sorriso, inclusi faccette e rimodellamento gengivale.",
-            Icon: Sparkles,
-            solutions: ["Faccette", "Sbiancamento", "Bonding"],
-        },
-        {
-            title: "Ortodonzia",
-            description:
-                "Allineamento dei denti e correzione della mascella per un sorriso armonioso e funzionale.",
-            Icon: RefreshCw,
-            solutions: ["Apparecchi fissi", "Invisalign", "Bite"],
-        },
-        {
-            title: "Implantologia",
-            description:
-                "Impianti dentali di ultima generazione per sostituire i denti mancanti.",
-            Icon: HeartHandshake,
-            solutions: ["Impianti singoli", "All-on-4", "Rigenerazione ossea"],
-        },
-        {
-            title: "Conservativa",
-            description:
-                "Trattamenti per la cura delle carie e il ripristino della funzionalità dei denti.",
-            Icon: Shield,
-            solutions: ["Otturazioni", "Devitalizzazioni", "Ricostruzioni"],
-        },
-    ];
-
     return (
-        <>
+        <div className=" bg-primary-100">
             {/* Hero Section */}
-            <div className="flex h-screen flex-col items-center justify-center relative  bg-primary-100">
+            <div className="flex h-screen flex-col items-center justify-center relative">
                 <Image
                     src={"/images/hero.jpg"}
                     alt="Studio Dentistico Fanelli immagine header"
@@ -127,7 +71,7 @@ export default function Home() {
                             />
                         ))}
                     </div>
-                    <Button>
+                    <Button className="px-16 py-4">
                         <Phone size={20} />
                         Prenota la tua visita
                     </Button>
@@ -135,8 +79,8 @@ export default function Home() {
             </article>
 
             {/* Sezione Chi siamo */}
-            <article className="py-16 grid grid-cols-2 container mx-auto ">
-                <section className="flex flex-col gap-16 ">
+            <article className="py-16 grid grid-cols-2 gap-8 container mx-auto bg-primary-100">
+                <section className="flex flex-col gap-16 items-start ">
                     <h2 className="text-6xl font-bold">Chi Siamo</h2>
                     <p className="text-2xl">
                         Il nostro studio dentistico è composto da un team di
@@ -169,8 +113,9 @@ export default function Home() {
                                     Tecnologie Avanzate
                                 </h4>
                                 <p>
-                                    Utilizziamo attrezzature all'avanguardia per
-                                    garantire diagnosi e trattamenti precisi.
+                                    Utilizziamo attrezzature
+                                    all&apos;avanguardia per garantire diagnosi
+                                    e trattamenti precisi.
                                 </p>
                             </div>
                         </li>
@@ -190,8 +135,11 @@ export default function Home() {
                             </div>
                         </li>
                     </ul>
+                    <Button variant={"accent"}>
+                        <Phone size={20} /> Contattaci ora
+                    </Button>
                 </section>
-                <section>
+                <section className="relative">
                     <Image
                         src={"/images/francesco.jpg"}
                         alt="Chi siamo Studio Dentistico Fanelli"
@@ -199,8 +147,70 @@ export default function Home() {
                         height={400}
                         className="rounded-3xl"
                     />
+                    <div className="absolute p-8  bg-white rounded-3xl shadow-xl -bottom-10 -left-10 flex flex-col items-center gap-4">
+                        <p className="text-primary text-4xl font-bold">30+</p>
+                        <p>Anni di Esperienza</p>
+                    </div>
                 </section>
             </article>
+            <article className="container mx-auto py-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {aboutStats.map((stat, index) => (
+                        <div
+                            key={index}
+                            className="bg-white rounded-xl shadow-lg flex flex-col gap-4 items-center justify-center aspect-square"
+                        >
+                            <IconBox Icon={stat.icon} />
+                            <p className="text-4xl font-bold text-primary">
+                                {stat.value}
+                            </p>
+                            <h3 className="text-xl font-semibold">
+                                {stat.title}
+                            </h3>
+                        </div>
+                    ))}
+                </div>
+            </article>
+            {/* Sezione Contatti */}
+            <article className="py-16">
+                <div className="container mx-auto flex flex-col gap-8 items-center">
+                    <h2 className="text-6xl font-bold text-center">
+                        Contattaci
+                    </h2>
+                    <p>
+                        Siamo qui per prenderci cura del tuo sorriso. Prenota la
+                        tua visita o contattaci per qualsiasi informazione.
+                    </p>
+                    <div className="grid grid-cols-2 gap-16 w-full">
+                        <section className="rounded-xl overflow-hidden">
+                            <Maps />
+                        </section>
+                        <section className="flex flex-col gap-8 justify-center">
+                            {contacts.map((contact, index) => (
+                                <div
+                                    key={index}
+                                    className="flex items-center gap-4"
+                                >
+                                    <contact.icon
+                                        className="text-primary"
+                                        size={24}
+                                    />
+                                    <div>
+                                        <p className="font-semibold">
+                                            {contact.label}
+                                        </p>
+                                        <p>{contact.value}</p>
+                                        <p className="text-sm text-gray-500">
+                                            {contact.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </section>
+                    </div>
+                </div>
+            </article>
+            <Footer />
             {/* Schema Markup per Local Business */}
             <script
                 type="application/ld+json"
@@ -260,6 +270,6 @@ export default function Home() {
                     }),
                 }}
             />
-        </>
+        </div>
     );
 }

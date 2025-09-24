@@ -1,0 +1,52 @@
+name: Deploy to Deploy Branch
+run-name: Deploy Next.js App
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch: # Permette deploy manuale
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "24"
+                  cache: "npm"
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Lint code
+              run: npm run lint --if-present
+
+            - name: Build Next.js app
+              run: npm run build
+              env:
+                  NODE_ENV: production
+
+            - name: Export static files
+              run: npm run export --if-present || echo "No export script found"
+
+            - name: Deploy to deploy branch
+              uses: peaceiris/actions-gh-pages@v4
+              if: github.ref == 'refs/heads/main'
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./out
+                  publish_branch: deploy
+                  force_orphan: true
+                  commit_message: "Deploy: ${{ github.event.head_commit.message }}"
+                  user_name: "github-actions[bot]"
+                  user_email: "github-actions[bot]@users.noreply.github.com"
