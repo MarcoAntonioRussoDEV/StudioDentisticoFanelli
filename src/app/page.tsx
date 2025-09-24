@@ -15,7 +15,7 @@ export default function Home() {
             {/* Hero Section */}
             <div className="flex h-screen flex-col items-center justify-center relative">
                 <Image
-                    src={"/images/hero.jpg"}
+                    src="./images/hero.jpg"
                     alt="Studio Dentistico Fanelli immagine header"
                     fill
                     priority
@@ -141,7 +141,7 @@ export default function Home() {
                 </section>
                 <section className="relative">
                     <Image
-                        src={"/images/francesco.jpg"}
+                        src="./images/francesco.jpg"
                         alt="Chi siamo Studio Dentistico Fanelli"
                         width={600}
                         height={400}
