@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import AOSProvider from "./components/AOSProvider";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -35,10 +36,14 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="it">
+        <html
+            lang="it"
+            data-scroll-behavior="smooth"
+        >
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
+                <AOSProvider />
                 <Navbar />
                 <main>{children}</main>
             </body>

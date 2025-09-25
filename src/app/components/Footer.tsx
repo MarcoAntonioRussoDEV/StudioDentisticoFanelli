@@ -7,8 +7,8 @@ import Button from "./Button";
 
 const Footer = () => {
     return (
-        <footer className="bg-stone-900 text-muted py-16">
-            <article className="container mx-auto grid grid-cols-4 gap-16">
+        <footer className="bg-stone-900 text-muted py-16 px-4">
+            <article className="container mx-auto grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-16">
                 {/* Social */}
                 <section className="flex flex-col gap-4">
                     <h5 className="text-xl font-bold">

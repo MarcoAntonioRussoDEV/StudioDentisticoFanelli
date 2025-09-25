@@ -1,15 +1,19 @@
+// next.config.ts
 import type { NextConfig } from "next";
-import path from "path";
+
+const isDev = process.env.NODE_ENV === "development";
 
 const nextConfig: NextConfig = {
-    outputFileTracingRoot: path.join(__dirname),
     output: "export",
     trailingSlash: true,
-    basePath: "/StudioDentisticoFanelli",
-    assetPrefix: "/StudioDentisticoFanelli",
     images: {
         unoptimized: true,
     },
+    // Solo in produzione per GitHub Pages
+    ...(!isDev && {
+        basePath: "/StudioDentisticoFanelli",
+        assetPrefix: "/StudioDentisticoFanelli",
+    }),
 };
 
 export default nextConfig;

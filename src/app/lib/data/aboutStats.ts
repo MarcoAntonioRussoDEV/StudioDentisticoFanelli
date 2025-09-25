@@ -14,7 +14,7 @@ export const aboutStats: AboutStat[] = [
     },
     {
         title: "Anni di Esperienza",
-        value: "30+",
+        value: new Date().getFullYear() - 1985 + "+",
         icon: Medal,
     },
     {
