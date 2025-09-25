@@ -21,7 +21,7 @@ export default function Home() {
             <ServicesSection />
 
             {/* Sezione Chi siamo */}
-            <article className="py-16 grid grid-cols-1 lg:grid-cols-2 gap-8 container px-4 mx-auto bg-primary-100">
+            <article className="py-16 grid grid-cols-1 lg:grid-cols-2 gap-8 container px-4 mx-auto bg-primary-100 place-items-center">
                 <section className="flex flex-col gap-16 items-start">
                     <h2 className="text-6xl font-bold">Chi Siamo</h2>
                     <p className="text-2xl">

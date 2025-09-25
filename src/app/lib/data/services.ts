@@ -1,12 +1,4 @@
-import {
-    Smile,
-    Crown,
-    Sparkles,
-    RefreshCw,
-    HeartHandshake,
-    Shield,
-    LucideIcon,
-} from "lucide-react";
+import { Smile, LucideIcon } from "lucide-react";
 
 interface Solution {
     title: string;

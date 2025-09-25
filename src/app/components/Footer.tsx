@@ -72,7 +72,7 @@ const Footer = () => {
                     </div>
                 </section>
                 {/* Open Hours */}
-                <section className="flex flex-col gap-4 lg:items-start">
+                <section className="flex flex-col gap-4 md:items-start">
                     <h5 className="text-xl font-bold">Orari di Apertura</h5>
                     <div className="flex flex-col gap-4 ">
                         {contacts
