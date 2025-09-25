@@ -154,7 +154,6 @@ export default function Home() {
                     </div>
                 </div>
             </article>
-            <Footer />
             {/* Schema Markup per Local Business */}
             <script
                 type="application/ld+json"

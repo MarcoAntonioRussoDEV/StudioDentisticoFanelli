@@ -1,6 +1,7 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../lib/utils";
+import GlareHover from "./glare-hover/GlareHover";
 
 const buttonVariants = cva(
     "inline-flex items-center justify-center rounded-lg gap-2 cursor-pointer",
@@ -37,12 +38,21 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
     className,
 }) => {
     return (
-        <button
-            onClick={onClick}
-            className={cn(buttonVariants({ variant, size }), className)}
+        <GlareHover
+            glareColor="#ffffff"
+            glareOpacity={0.3}
+            glareAngle={-30}
+            glareSize={300}
+            transitionDuration={800}
+            playOnce={false}
         >
-            {children}
-        </button>
+            <button
+                onClick={onClick}
+                className={cn(buttonVariants({ variant, size }), className)}
+            >
+                {children}
+            </button>
+        </GlareHover>
     );
 };
 

@@ -72,9 +72,9 @@ const Footer = () => {
                     </div>
                 </section>
                 {/* Open Hours */}
-                <section className="flex flex-col gap-4">
+                <section className="flex flex-col gap-4 lg:items-start">
                     <h5 className="text-xl font-bold">Orari di Apertura</h5>
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4 ">
                         {contacts
                             .filter(
                                 contact => contact.label === "Orari di Apertura"
