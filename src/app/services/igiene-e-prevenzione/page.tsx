@@ -82,15 +82,9 @@ const page = () => {
                                 {solution.title}
                             </h3>
                             <p>{solution.description}</p>
-                            <div className="flex gap-8 mt-4">
-                                <div className="flex items-center gap-2">
-                                    <Clock className="text-primary" />
-                                    <p>{solution.duration}</p>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Shield className="text-primary" />
-                                    <p>{solution.frequency}</p>
-                                </div>
+                            <div className="flex items-center gap-2">
+                                <Clock className="text-primary" />
+                                <p>{solution.frequency}</p>
                             </div>
                         </div>
                     ))}

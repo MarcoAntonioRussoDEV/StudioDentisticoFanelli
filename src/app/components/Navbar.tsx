@@ -2,17 +2,24 @@
 
 import Link from "next/link";
 import Button from "./Button";
-import { LucideHamburger, Menu, Phone } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
+import Image from "next/image";
 
 const Navbar = () => {
     return (
-        <nav className="w-full  p-4 fixed top-0 z-1 bg-background shadow-md">
+        <nav className="w-full  p-4 sticky top-0 z-1 bg-background shadow-md">
             <div className="container mx-auto flex items-center justify-between">
                 <Link
                     className="text-lg font-semibold"
                     href="/"
                 >
-                    Studio Dentistico Fanelli
+                    <Image
+                        src="/images/logo-fanelli.svg"
+                        alt="Studio Dentistico Fanelli"
+                        height={160}
+                        width={160}
+                        priority
+                    />
                 </Link>
                 <div className="justify-between gap-4 font-semibold hidden md:flex">
                     <Link
@@ -67,7 +74,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <Button
-                                variant={"accent"}
+                                variant={"default"}
                                 onClick={() => console.log("Prenota clicked")}
                             >
                                 Prenota
@@ -88,7 +95,7 @@ const Navbar = () => {
                         0881123456
                     </Button>
                     <Button
-                        variant={"accent"}
+                        variant={"default"}
                         onClick={() => console.log("Prenota clicked")}
                     >
                         Prenota

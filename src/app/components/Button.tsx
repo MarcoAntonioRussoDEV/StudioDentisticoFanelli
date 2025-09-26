@@ -45,6 +45,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
             glareSize={300}
             transitionDuration={800}
             playOnce={false}
+            className="inline-block"
         >
             <button
                 onClick={onClick}

@@ -10,12 +10,16 @@ import { contacts } from "./lib/data/contacts";
 import { services } from "./lib/data/services";
 import HeroSection from "./components/sections/HeroSection";
 import ServicesSection from "./components/sections/ServicesSection";
+import ChairSideSection from "./components/sections/ChairSideSection";
 
 export default function Home() {
     return (
         <div className=" bg-primary-100">
             {/* Hero Section */}
             <HeroSection />
+
+            {/* Sezione ChairSide*/}
+            <ChairSideSection />
 
             {/* Sezione Servizi*/}
             <ServicesSection />
@@ -83,7 +87,7 @@ export default function Home() {
                 </section>
                 <section className="relative px-4 row-start-1 lg:col-start-2">
                     <Image
-                        src="./images/francesco.jpg"
+                        src="./images/dottori.jpg"
                         alt="Chi siamo Studio Dentistico Fanelli"
                         width={600}
                         height={400}
