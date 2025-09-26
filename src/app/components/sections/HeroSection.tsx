@@ -5,7 +5,7 @@ import Button from "../Button";
 
 const HeroSection = () => {
     return (
-        <div className="flex h-screen flex-col items-center justify-center relative">
+        <div className="flex min-h-screen flex-col items-center justify-center relative">
             <Image
                 src="./images/hero.jpg"
                 alt="Studio Dentistico Fanelli immagine header"
@@ -17,13 +17,13 @@ const HeroSection = () => {
                 <section className="container mx-auto font-bold px-4">
                     <div className="flex items-center gap-4">
                         <Image
-                            src="/images/logo-bianco.svg"
+                            src="./images/logo-bianco.svg"
                             alt="Studio Dentistico Fanelli immagine header"
                             width={160}
                             height={160}
                             className="hidden lg:inline-block"
                         />
-                        <h1 className="max-w-1/2 text-7xl mt-10">
+                        <h1 className="max-w-1/2 text-7xl">
                             Studio Dentistico <strong>Fanelli</strong>
                         </h1>
                     </div>
