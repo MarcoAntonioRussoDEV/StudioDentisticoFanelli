@@ -2,13 +2,13 @@ import Button from "@/app/components/Button";
 import Carousel from "@/app/components/Carousel";
 import IconBox from "@/app/components/IconBox";
 import { services } from "@/app/lib/data/services";
-import { CheckCircle, Clock, Shield } from "lucide-react";
+import { CheckCircle, Clock } from "lucide-react";
 
 const page = () => {
-    const service = services.filter(s => s.title === "Igiene e Prevenzione")[0];
+    const service = services.filter(s => s.slug === "igiene-e-prevenzione")[0];
 
     const benefits = [
-        "Prevenzione di carie e malattie gengivali",
+        "Prevenzione di carie e malattie gengivali e parodontali",
         "Mantenimento dell'igiene orale ottimale",
         "Sorriso più luminoso e sano",
         "Risparmio a lungo termine su cure dentali complesse",
@@ -30,7 +30,7 @@ const page = () => {
         {
             title: "Consulenza Personalizzata",
             description:
-                "Ti forniamo consigli su come mantenere una buona igiene orale a casa e prevenire problemi futuri.",
+                "Ti forniamo consigli su come mantenere una buona igiene orale a casa e prevenire problemi futuri",
         },
     ];
 
@@ -83,7 +83,7 @@ const page = () => {
                             </h3>
                             <p>{solution.description}</p>
                             <div className="flex items-center gap-2">
-                                <Clock className="text-primary" />
+                                <Clock className="text-primary min-w-8" />
                                 <p>{solution.frequency}</p>
                             </div>
                         </div>

@@ -9,6 +9,7 @@ const ServicesCard: React.FC<{ service: Service }> = ({ service }) => {
         <div
             className="bg-white rounded-lg shadow-lg hover:shadow-xl p-6 flex flex-col items-start gap-4"
             data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
         >
             <div className="flex gap-4 justify-between items-end w-full">
                 <h3 className="text-xl font-bold mb-4">{service.title}</h3>

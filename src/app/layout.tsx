@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import AOSProvider from "./components/AOSProvider";
 import Footer from "./components/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -25,7 +26,6 @@ export const metadata: Metadata = {
     robots: "index, follow",
 };
 
-// Sposta viewport qui
 export const viewport: Viewport = {
     width: "device-width",
     initialScale: 1,
@@ -47,6 +47,7 @@ export default function RootLayout({
                 <AOSProvider />
                 <Navbar />
                 <main>{children}</main>
+                <GoogleAnalytics gaId="G-LWTHSV6X6E" />
                 <Footer />
             </body>
         </html>

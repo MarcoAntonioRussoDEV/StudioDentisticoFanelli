@@ -14,7 +14,7 @@ const Navbar = () => {
                     href="/"
                 >
                     <Image
-                        src="./images/logo-fanelli.svg"
+                        src="/images/logo-fanelli.svg"
                         alt="Studio Dentistico Fanelli"
                         height={160}
                         width={160}

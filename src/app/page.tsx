@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Button from "./components/Button";
 import { Circle, MapPin, Phone } from "lucide-react";
@@ -11,8 +13,68 @@ import { services } from "./lib/data/services";
 import HeroSection from "./components/sections/HeroSection";
 import ServicesSection from "./components/sections/ServicesSection";
 import ChairSideSection from "./components/sections/ChairSideSection";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import { useEffect, useState } from "react";
+
+function useResponsivePerView() {
+    const [perView, setPerView] = useState(1.5);
+
+    useEffect(() => {
+        function handleResize() {
+            if (window.innerWidth >= 1024) setPerView(3.5); // desktop
+            else if (window.innerWidth >= 640) setPerView(2.5); // tablet
+            else setPerView(1.5); // mobile
+        }
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    return perView;
+}
 
 export default function Home() {
+    const perView = useResponsivePerView();
+    const [ref] = useKeenSlider<HTMLDivElement>({
+        loop: true,
+        mode: "free-snap",
+        slides: {
+            perView: perView,
+            spacing: 15,
+        },
+    });
+
+    const team = [
+        {
+            name: "Dott. Giuseppe Fanelli",
+            image: "./images/team/Giuseppe.jpg",
+        },
+        {
+            name: "Dott. Francesco Fanelli",
+            image: "./images/team/Francesco.jpg",
+        },
+        {
+            name: "Dott.ssa Carlotta Fanelli",
+            image: "./images/team/Carlotta.jpg",
+        },
+        {
+            name: "Monica",
+            image: "./images/team/Monica.jpg",
+        },
+        {
+            name: "Annachiara",
+            image: "./images/team/Annachiara.jpg",
+        },
+        {
+            name: "Chiara",
+            image: "./images/team/Chiara.jpg",
+        },
+        {
+            name: "Diomira",
+            image: "./images/team/Diomira.jpg",
+        },
+    ];
     return (
         <div className=" bg-primary-100">
             {/* Hero Section */}
@@ -25,79 +87,33 @@ export default function Home() {
             <ServicesSection />
 
             {/* Sezione Chi siamo */}
-            <article className="py-16 grid grid-cols-1 lg:grid-cols-2 gap-8 container px-4 mx-auto bg-primary-100 place-items-center">
-                <section className="flex flex-col gap-16 items-start">
-                    <h2 className="text-6xl font-bold">Chi Siamo</h2>
-                    <p className="text-2xl">
-                        Il nostro studio dentistico è composto da un team di
-                        professionisti altamente qualificati, pronti a prendersi
-                        cura della tua salute orale con competenza e dedizione.
-                    </p>
-                    <ul className="flex flex-col gap-4">
-                        <li className="flex gap-8 items-center">
-                            <Circle
-                                strokeWidth={4}
-                                className="text-primary flex-shrink-0"
-                            />
-                            <div>
-                                <h4 className="text-xl font-bold">
-                                    Team Qualificato
+            <article className="py-16 container mx-auto px-4 bg-primary-100 place-items-center">
+                <section className="gap-16 flex flex-col items-center w-full">
+                    <h2 className="text-center text-6xl font-bold">
+                        Chi Siamo
+                    </h2>
+
+                    <div
+                        ref={ref}
+                        className="keen-slider"
+                    >
+                        {team.map((member, index) => (
+                            <div
+                                key={index}
+                                className="keen-slider__slide rounded-2xl relative"
+                            >
+                                <Image
+                                    src={member.image}
+                                    alt={member.name}
+                                    width={600}
+                                    height={400}
+                                    className="xl:mt-24 rounded-2xl"
+                                />
+                                <h4 className="absolute text-white bg-primary/40 w-full text-center bottom-0 text-2xl px-2">
+                                    {member.name}
                                 </h4>
-                                <p>
-                                    Professionisti specializzati in costante
-                                    aggiornamento.
-                                </p>
                             </div>
-                        </li>
-                        <li className="flex gap-8 items-center">
-                            <Circle
-                                strokeWidth={4}
-                                className="text-primary flex-shrink-0"
-                            />
-                            <div>
-                                <h4 className="text-xl font-bold">
-                                    Tecnologie Avanzate
-                                </h4>
-                                <p>
-                                    Utilizziamo attrezzature
-                                    all&apos;avanguardia per garantire diagnosi
-                                    e trattamenti precisi.
-                                </p>
-                            </div>
-                        </li>
-                        <li className="flex gap-8 items-center">
-                            <Circle
-                                strokeWidth={4}
-                                className="text-primary flex-shrink-0"
-                            />
-                            <div>
-                                <h4 className="text-xl font-bold">
-                                    Approccio Personalizzato
-                                </h4>
-                                <p>
-                                    Ogni paziente è unico, e offriamo piani di
-                                    trattamento su misura.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                    <Button variant={"accent"}>
-                        <Phone size={20} /> Contattaci ora
-                    </Button>
-                </section>
-                <section className="relative px-4 row-start-1 lg:col-start-2">
-                    <Image
-                        src="./images/dottori.jpg"
-                        alt="Chi siamo Studio Dentistico Fanelli"
-                        width={600}
-                        height={400}
-                        className="rounded-3xl"
-                    />
-                    <div className="absolute p-8 bg-white rounded-3xl shadow-xl -bottom-10 -left-10 flex-col items-center gap-4 hidden lg:flex">
-                        <p className="text-primary text-4xl font-bold">
-                            {new Date().getFullYear() - 1985 + "+"}
-                        </p>
-                        <p>Anni di Esperienza</p>
+                        ))}
                     </div>
                 </section>
             </article>

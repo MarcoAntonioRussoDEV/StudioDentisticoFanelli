@@ -27,7 +27,7 @@ const Footer = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <social.icon />
+                                <social.icon className="text-primary" />
                             </a>
                         ))}
                     </div>
@@ -65,7 +65,7 @@ const Footer = () => {
                                     rel="noopener noreferrer"
                                     className="flex items-center gap-2 hover:underline"
                                 >
-                                    <contact.icon className="text-accent" />
+                                    <contact.icon className="text-primary" />
                                     {contact.value}
                                 </Link>
                             ))}
@@ -84,12 +84,12 @@ const Footer = () => {
                                     key={contact.label}
                                     className="flex items-center gap-2"
                                 >
-                                    <contact.icon className="text-accent " />
+                                    <contact.icon className="text-primary " />
                                     {contact.value}
                                 </p>
                             ))}
                     </div>
-                    <Button variant={"accent"}>Prenota Ora</Button>
+                    <Button variant={"default"}>Prenota Ora</Button>
                 </section>
             </article>
             <div className="container mx-auto border-b  border-white my-8"></div>

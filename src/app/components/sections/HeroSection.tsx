@@ -33,7 +33,7 @@ const HeroSection = () => {
                         all&apos;avanguardia e un team esperto.
                     </p>
                 </section>
-                <section className="container mx-auto font-bold flex flex-col items-start lg:flex-row gap-4 px-4">
+                <section className="container mx-auto font-bold flex flex-col items-center lg:flex-row gap-4 px-4">
                     <Button
                         variant={"outline"}
                         className="bg-white hover:bg-gray-100 text-black"

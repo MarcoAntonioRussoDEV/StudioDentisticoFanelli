@@ -1,7 +1,6 @@
 import { CheckCircle, Monitor, Printer, Scan } from "lucide-react";
 import React from "react";
 import IconBox from "../IconBox";
-import Image from "next/image";
 import ChairsideCard from "../ChairsideCard";
 
 const ChairSideSection = () => {
