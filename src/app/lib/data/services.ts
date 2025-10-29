@@ -28,7 +28,7 @@ export const services: Service[] = [
     {
         title: "Igiene e Prevenzione",
         description:
-            "la salute delle gengive è la base per la salute di tutta la bocca. Non trascurare i primi segnali come il sanguinamento o la sensibilità. Con la giusta prevenzione e una diagnosi tempestiva, è possibile evitare l'evoluzione della malattia e preservare il tuo sorriso nel tempo",
+            "Mantenimento della salute orale attraverso pulizia professionale, fluoroprofilassi e controlli regolari",
         Icon: Smile,
         solutions: [
             {
@@ -49,7 +49,7 @@ export const services: Service[] = [
     {
         title: "Protesi Dentale",
         description:
-            "La perdita di uno o più denti, dovuta a carie, malattia parodontale o traumi, può compromettere la funzionalità della bocca e l’estetica del sorriso. La protesi dentale consente di ripristinare i denti mancanti, restituendo al paziente una corretta masticazione e l’armonia del volto.",
+            "Protesi dentali fisse e mobili per ripristinare funzionalità ed estetica",
         Icon: Wrench,
         solutions: [
             {
@@ -85,11 +85,11 @@ export const services: Service[] = [
     {
         title: "Impiantologia",
         description:
-            "La perdita di uno o più denti non influisce solo sull’estetica del sorriso, ma anche sulla masticazione, sulla fonazione e sulla salute generale della bocca. L’implantologia dentale rappresenta oggi la soluzione più moderna, sicura e duratura per sostituire i denti mancanti. Un impianto è una piccola vite in titanio biocompatibile inserita nell’osso mascellare, che funge da radice artificiale su cui viene fissata una corona o una protesi. Nel nostro studio, adottiamo le tecnologie digitali più avanzate per garantire risultati estetici e funzionali eccellenti.",
+            "Ripristino dei denti mancanti con impianti dentali sicuri e duraturi",
         Icon: Wrench,
         solutions: [
             {
-                title: "Implantologia mini-invasiva e digitale",
+                title: "Implantologia computer-guidata/mini-invasiva",
                 description:
                     "Grazie alla chirurgia implantare computer-guidata, pianifichiamo l’intervento in 3D, ottenendo un posizionamento preciso e sicuro degli impianti. La procedura è mini-invasiva, con tempi di guarigione più rapidi e minore discomfort post-operatorio.",
                 frequency:
@@ -121,7 +121,7 @@ export const services: Service[] = [
     {
         title: "Parodontologia",
         description:
-            "La parodontologia è la branca dell’odontoiatria che si occupa della diagnosi e del trattamento delle malattie che colpiscono il parodonto, ossia i tessuti di supporto del dente: gengiva, legamento parodontale e osso alveolare. La patologia più comune è la malattia parodontale (nota anche come piorrea), un’infiammazione cronica che, se trascurata, può causare retrazione gengivale, mobilità dentale e, nei casi più gravi, perdita dei denti. Nel nostro studio di Foggia, la cura e la prevenzione della parodontite rappresentano un pilastro fondamentale: ogni trattamento viene personalizzato in base alle condizioni cliniche e alle esigenze del paziente.",
+            "Prevenzione e cura delle gengive e del tessuto di supporto dei denti",
         Icon: Wrench,
         solutions: [
             {
@@ -156,8 +156,7 @@ export const services: Service[] = [
     },
     {
         title: "Ortodonzia",
-        description:
-            "L’ortodonzia è la branca dell’odontoiatria che si occlupa della correzione delle malocclusioni dentali e scheletriche, degli affollamenti e delle problematiche funzionali per ottenere un sorriso allineato e un'occlusione stabile,estetica e funzionale.",
+        description: "Allineamento e salute del sorriso",
         Icon: Wrench,
         solutions: [
             {
@@ -177,9 +176,8 @@ export const services: Service[] = [
         ],
     },
     {
-        title: "Pedodonzia - Cura dentale per bambini",
-        description:
-            "Programma completo di prevenzione, diagnosi e trattamento delle patologie orali tipiche dell'età pediatrica, con un approccio mirato e non traumatico.",
+        title: "Pedodonzia",
+        description: "Cura e  prevenzione dei denti dei più piccoli",
         Icon: Wrench,
         solutions: [
             {
@@ -198,9 +196,9 @@ export const services: Service[] = [
         ],
     },
     {
-        title: "Trattamento delle Carie e Restauri Estetici",
+        title: "Conservativa",
         description:
-            "Il trattamento della carie consiste nella rimozione del tessuto dentale cariato o compromesso e ricostruzione del dente mediante l'uso di materiali compositi o intarsi in ceramica/composito che replicano fedelmente colore e forma del dente naturale.",
+            "Trattamento della carie o traumi preservando forma, funzione ed estetica",
         Icon: Wrench,
         solutions: [
             {
@@ -220,9 +218,8 @@ export const services: Service[] = [
         ],
     },
     {
-        title: "Devitalizzazioni e Terapie Endodontiche",
-        description:
-            "Il trattamento endodontico consiste nella rimozione completa della polpa infetta o infiammata all'interno dei canali radicolari, disinfezione dello spazio e sigillatura tridimensionale. Questo processo elimina il dolore e l'infezione, salvando il dente.",
+        title: "Endodonzia",
+        description: "Devitalizzazione e trattamento endodontici",
         Icon: Wrench,
         solutions: [
             {

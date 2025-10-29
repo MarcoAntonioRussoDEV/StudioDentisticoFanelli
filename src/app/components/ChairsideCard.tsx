@@ -13,7 +13,7 @@ const ChairsideCard: React.FC<ChairsideCardProps> = ({
     title = "Progettazione Digitale",
     description = "Software CAD avanzato per una precisione millimetrica nella progettazione delle protesi.",
     videoSrc = "./videos/Fanelli.mp4",
-    videoPoster = "./images/video-poster-progettazione.jpg",
+    videoPoster = "./images/frame-placeholder-video-chairside.png",
     videoAlt = "Video della progettazione digitale dentale con software CAD - Studio Dentistico Fanelli",
 }) => {
     return (

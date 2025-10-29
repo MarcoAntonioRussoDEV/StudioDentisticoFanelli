@@ -1,5 +1,4 @@
-import { Facebook, Instagram, LucideIcon, Twitter } from "lucide-react";
-import { JSX } from "react";
+import { Facebook, Instagram, LucideIcon, Youtube } from "lucide-react";
 
 export interface Social {
     name: string;
@@ -10,17 +9,17 @@ export interface Social {
 export const socials: Social[] = [
     {
         name: "Facebook",
-        url: "https://www.facebook.com",
+        url: "https://www.facebook.com/studiodentisticofanelli",
         icon: Facebook,
     },
     {
-        name: "Twitter",
-        url: "https://www.twitter.com",
-        icon: Twitter,
+        name: "Youtube",
+        url: "https://www.youtube.com/channel/UCwo7o3SjeXaBmgdoQjAK0YA",
+        icon: Youtube,
     },
     {
         name: "Instagram",
-        url: "https://www.instagram.com",
+        url: "https://www.instagram.com/studio_dentistico_fanelli/?igsh=MTl2YnI2MTF2bnVqdg%3D%3D#",
         icon: Instagram,
     },
 ];

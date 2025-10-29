@@ -72,7 +72,7 @@ const page = () => {
                 <h2 className="text-4xl font-bold text-center py-16">
                     I Nostri Trattamenti
                 </h2>
-                <section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <section className="grid grid-cols-1  gap-4">
                     {service.solutions.map((solution, index) => (
                         <div
                             className="bg-white text-soft shadow-xl p-4 py-8 rounded-lg flex flex-col gap-4 justify-between"

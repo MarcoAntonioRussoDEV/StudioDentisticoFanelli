@@ -30,13 +30,13 @@ const Navbar = () => {
                     </Link>
                     <Link
                         className=" hover:underline"
-                        href="/aboutus"
+                        href="#about_us"
                     >
                         Chi siamo
                     </Link>
                     <Link
                         className=" hover:underline"
-                        href="#contatti"
+                        href="#contacts"
                     >
                         Contatti
                     </Link>

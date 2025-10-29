@@ -1,5 +1,5 @@
 "use client";
-
+//TODO whatsapp CTA
 import Image from "next/image";
 import Button from "./components/Button";
 import { Circle, MapPin, Phone } from "lucide-react";
@@ -18,13 +18,13 @@ import "keen-slider/keen-slider.min.css";
 import { useEffect, useState } from "react";
 
 function useResponsivePerView() {
-    const [perView, setPerView] = useState(1.5);
+    const [perView, setPerView] = useState(2.5);
 
     useEffect(() => {
         function handleResize() {
             if (window.innerWidth >= 1024) setPerView(3.5); // desktop
             else if (window.innerWidth >= 640) setPerView(2.5); // tablet
-            else setPerView(1.5); // mobile
+            else setPerView(2.5); // mobile
         }
         handleResize();
         window.addEventListener("resize", handleResize);
@@ -87,7 +87,10 @@ export default function Home() {
             <ServicesSection />
 
             {/* Sezione Chi siamo */}
-            <article className="py-16 container mx-auto px-4 bg-primary-100 place-items-center">
+            <article
+                className="py-16 container mx-auto px-4 bg-primary-100 place-items-center"
+                id="about_us"
+            >
                 <section className="gap-16 flex flex-col items-center w-full">
                     <h2 className="text-center text-6xl font-bold">
                         Chi Siamo
@@ -100,16 +103,16 @@ export default function Home() {
                         {team.map((member, index) => (
                             <div
                                 key={index}
-                                className="keen-slider__slide rounded-2xl relative"
+                                className="keen-slider__slide relative"
                             >
                                 <Image
                                     src={member.image}
                                     alt={member.name}
                                     width={600}
                                     height={400}
-                                    className="xl:mt-24 rounded-2xl"
+                                    className="xl:mt-24 rounded-full grayscale hover:grayscale-0 transition-all duration-150"
                                 />
-                                <h4 className="absolute text-white bg-primary/40 w-full text-center bottom-0 text-2xl px-2">
+                                <h4 className="text-white rounded-2xl bg-primary/40 w-full text-center bottom-0 text-2xl px-2">
                                     {member.name}
                                 </h4>
                             </div>
@@ -136,7 +139,10 @@ export default function Home() {
                 </div>
             </article>
             {/* Sezione Contatti */}
-            <article className="py-16">
+            <article
+                className="py-16"
+                id="contacts"
+            >
                 <div className="container px-4 mx-auto flex flex-col gap-8 items-center">
                     <h2 className="text-6xl font-bold text-center">
                         Contattaci

@@ -27,7 +27,10 @@ const Footer = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <social.icon className="text-primary" />
+                                <social.icon
+                                    className="text-primary"
+                                    size={48}
+                                />
                             </a>
                         ))}
                     </div>

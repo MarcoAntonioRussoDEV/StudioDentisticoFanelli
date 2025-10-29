@@ -28,9 +28,9 @@ const HeroSection = () => {
                         </h1>
                     </div>
                     <p className="max-w-2/3 mt-4 text-2xl font-normal">
-                        Studio dentistico moderno a Foggia. Offriamo cure
-                        dentali di alta qualità con tecnologie
-                        all&apos;avanguardia e un team esperto.
+                        Accogliamo il tuo sorriso con professionalità e
+                        passione, unendo esperienza clinica e attenzione al
+                        paziente
                     </p>
                 </section>
                 <section className="container mx-auto font-bold flex flex-col items-center lg:flex-row gap-4 px-4">
