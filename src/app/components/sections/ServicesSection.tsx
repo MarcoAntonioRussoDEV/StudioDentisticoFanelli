@@ -22,8 +22,8 @@ const ServicesSection = () => {
                         />
                     ))}
                 </div>
-                <Button className="px-24 py-6">
-                    <Phone size={20} />
+                <Button className="px-16 py-6 rounded-3xl">
+                    <Phone size={32} />
                     Prenota la tua visita
                 </Button>
             </div>

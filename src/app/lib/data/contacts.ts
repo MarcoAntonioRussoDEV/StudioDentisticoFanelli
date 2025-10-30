@@ -4,7 +4,7 @@ export const contacts = [
     {
         icon: Phone,
         label: "Telefono",
-        value: "+39 0881 123456",
+        value: "0881635896",
         description: "Lun-Ven: 9:00 - 18:00",
     },
     {

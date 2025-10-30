@@ -4,8 +4,22 @@ import Link from "next/link";
 import Button from "./Button";
 import { Menu, Phone } from "lucide-react";
 import Image from "next/image";
+import { contacts } from "../lib/data/contacts";
 
 const Navbar = () => {
+    const phoneNumber =
+        contacts.find(contact => contact.icon === Phone)?.value || "0881635896";
+
+    function scrollToContactForm(): void {
+        const element = document.getElementById("contact-form");
+        if (element) {
+            element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    }
+
     return (
         <nav className="w-full  p-4 sticky top-0 z-1 bg-background shadow-md">
             <div className="container mx-auto flex items-center justify-between">
@@ -14,7 +28,7 @@ const Navbar = () => {
                     href="/"
                 >
                     <Image
-                        src="./images/logo-fanelli.svg"
+                        src="/images/logo-fanelli.svg"
                         alt="Studio Dentistico Fanelli"
                         height={160}
                         width={160}
@@ -59,7 +73,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 className=" hover:underline"
-                                href="/aboutus"
+                                href="#about_us"
                             >
                                 Chi siamo
                             </Link>
@@ -67,7 +81,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 className=" hover:underline"
-                                href="#contatti"
+                                href="#contacts"
                             >
                                 Contatti
                             </Link>
@@ -75,7 +89,12 @@ const Navbar = () => {
                         <li>
                             <Button
                                 variant={"default"}
-                                onClick={() => console.log("Prenota clicked")}
+                                onClick={() =>
+                                    window.open(
+                                        `tel:+39${phoneNumber}`,
+                                        "_self"
+                                    )
+                                }
                             >
                                 Prenota
                             </Button>
@@ -86,17 +105,19 @@ const Navbar = () => {
                 <div className="justify-between gap-4 hidden md:flex">
                     <Button
                         variant="outline"
-                        onClick={() => console.log("Phone number clicked")}
+                        onClick={() =>
+                            window.open(`tel:+39${phoneNumber}`, "_self")
+                        }
                     >
                         <Phone
                             className="mr-2"
                             size={16}
                         />
-                        0881123456
+                        {phoneNumber}
                     </Button>
                     <Button
                         variant={"default"}
-                        onClick={() => console.log("Prenota clicked")}
+                        onClick={() => scrollToContactForm()}
                     >
                         Prenota
                     </Button>

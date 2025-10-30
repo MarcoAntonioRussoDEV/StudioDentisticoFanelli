@@ -1,21 +1,19 @@
 "use client";
-//TODO whatsapp CTA
+
 import Image from "next/image";
-import Button from "./components/Button";
-import { Circle, MapPin, Phone } from "lucide-react";
-import ServicesCard from "./components/ServicesCard";
+import Link from "next/link";
 import IconBox from "./components/IconBox";
 import Maps from "./components/Maps";
-import Footer from "./components/Footer";
 import { aboutStats } from "./lib/data/aboutStats";
 import { contacts } from "./lib/data/contacts";
-import { services } from "./lib/data/services";
 import HeroSection from "./components/sections/HeroSection";
 import ServicesSection from "./components/sections/ServicesSection";
 import ChairSideSection from "./components/sections/ChairSideSection";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { useEffect, useState } from "react";
+import { team } from "./lib/data/team";
+import ContactForm from "./components/ContactForm";
 
 function useResponsivePerView() {
     const [perView, setPerView] = useState(2.5);
@@ -45,36 +43,6 @@ export default function Home() {
         },
     });
 
-    const team = [
-        {
-            name: "Dott. Giuseppe Fanelli",
-            image: "./images/team/Giuseppe.jpg",
-        },
-        {
-            name: "Dott. Francesco Fanelli",
-            image: "./images/team/Francesco.jpg",
-        },
-        {
-            name: "Dott.ssa Carlotta Fanelli",
-            image: "./images/team/Carlotta.jpg",
-        },
-        {
-            name: "Monica",
-            image: "./images/team/Monica.jpg",
-        },
-        {
-            name: "Annachiara",
-            image: "./images/team/Annachiara.jpg",
-        },
-        {
-            name: "Chiara",
-            image: "./images/team/Chiara.jpg",
-        },
-        {
-            name: "Diomira",
-            image: "./images/team/Diomira.jpg",
-        },
-    ];
     return (
         <div className=" bg-primary-100">
             {/* Hero Section */}
@@ -96,14 +64,16 @@ export default function Home() {
                         Chi Siamo
                     </h2>
 
+                    {/* Carousel */}
                     <div
                         ref={ref}
                         className="keen-slider"
                     >
                         {team.map((member, index) => (
-                            <div
+                            <Link
                                 key={index}
-                                className="keen-slider__slide relative"
+                                href={member.url || "#about_us"}
+                                className="keen-slider__slide relative cursor-pointer"
                             >
                                 <Image
                                     src={member.image}
@@ -115,7 +85,7 @@ export default function Home() {
                                 <h4 className="text-white rounded-2xl bg-primary/40 w-full text-center bottom-0 text-2xl px-2">
                                     {member.name}
                                 </h4>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </section>
@@ -178,6 +148,7 @@ export default function Home() {
                             ))}
                         </section>
                     </div>
+                    <ContactForm />
                 </div>
             </article>
             {/* Schema Markup per Local Business */}

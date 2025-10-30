@@ -8,10 +8,10 @@ const ServicesCard: React.FC<{ service: Service }> = ({ service }) => {
     return (
         <Link
             href={service.url}
-            // className="mt-auto ms-auto  hover:underline inline-flex text-primary"
+            className="h-full"
         >
             <div
-                className="bg-white rounded-lg shadow-lg hover:shadow-xl p-6 flex flex-col items-start gap-4"
+                className="bg-white rounded-lg shadow-lg hover:shadow-xl p-6 flex flex-col items-start gap-4 h-full"
                 data-aos="fade-up"
                 data-aos-anchor-placement="top-bottom"
             >
@@ -20,18 +20,6 @@ const ServicesCard: React.FC<{ service: Service }> = ({ service }) => {
                     <IconBox Icon={service.Icon} />
                 </div>
                 <p className="text-gray-600">{service.description}</p>
-                {/* <ul className="list-disc list-inside">
-                {service.solutions.map((solution, index) => (
-                    <li
-                        key={index}
-                        className="text-gray-600"
-                    >
-                        {solution.title}
-                    </li>
-                ))}
-            </ul> */}
-                {/* Scopri di più */}
-                {/* <ChevronRight /> */}
             </div>
         </Link>
     );

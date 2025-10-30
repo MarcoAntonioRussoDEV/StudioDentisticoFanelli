@@ -15,9 +15,8 @@ const Footer = () => {
                         Studio Dentistico Fanelli
                     </h5>
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Quod asperiores est sapiente suscipit, dignissimos
-                        magni
+                        Seguici sui nostri canali social per rimanere aggiornato
+                        sulle ultime novità e offerte.
                     </p>
                     <div className="flex gap-4 text-2xl">
                         {socials.map(social => (

@@ -2,7 +2,7 @@
 @plugin "daisyui";
 
 :root {
-    font-size: 12px;
+    font-size: calc(1rem + 0.1vw);
     --background: #ffffff;
     --foreground: #171717;
     --primary: #0e7ba6;
@@ -11,9 +11,9 @@
     --muted: #d3d4d4;
     scroll-behavior: smooth;
 
-    @media screen and (min-width: 1200px) {
+    /* @media screen and (min-width: 1200px) {
         font-size: 16px;
-    }
+    } */
 }
 
 @theme inline {
