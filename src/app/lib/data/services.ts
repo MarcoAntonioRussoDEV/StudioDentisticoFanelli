@@ -1,4 +1,5 @@
 import { DifferencesProps } from "@/app/components/Differences";
+import { withBasePath } from "../basePath";
 import {
     Smile,
     Wrench,
@@ -19,16 +20,15 @@ export interface Service {
 
 const getServiceImages = (slug: string, count: number): string[] => {
     return Array.from({ length: count }, (_, i) => {
-        return "/images/services/" + slug + "/" + (i + 1) + ".png";
+        return withBasePath(`/images/services/${slug}/${i + 1}.png`);
     });
 };
 
 const getDiffImages = (slug: string, count: number): DifferencesProps[] => {
     return Array.from({ length: count }, (_, i) => {
         return {
-            before: "/images/services/" + slug + "/" + (i + 1) + ".png",
-            after:
-                "/images/services/" + slug + "/" + (i + 1) + "-post" + ".png",
+            before: withBasePath(`/images/services/${slug}/${i + 1}.png`),
+            after: withBasePath(`/images/services/${slug}/${i + 1}-post.png`),
         };
     }) as DifferencesProps[];
 };

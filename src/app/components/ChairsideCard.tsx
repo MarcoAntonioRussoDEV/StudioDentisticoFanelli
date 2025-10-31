@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import Link from "next/link";
+import { withBasePath } from "../lib/basePath";
 
 interface ChairsideCardProps {
     title?: string;
@@ -13,8 +14,8 @@ interface ChairsideCardProps {
 const ChairsideCard: React.FC<ChairsideCardProps> = ({
     title = "Progettazione Digitale",
     description = "Software CAD avanzato per una precisione millimetrica nella progettazione delle protesi.",
-    videoSrc = "/videos/Fanelli.mp4",
-    videoPoster = "/images/frame-placeholder-video-chairside.png",
+    videoSrc = withBasePath("/videos/Fanelli.mp4"),
+    videoPoster = withBasePath("/images/frame-placeholder-video-chairside.png"),
     videoAlt = "Video della progettazione digitale dentale con software CAD - Studio Dentistico Fanelli",
 }) => {
     return (
