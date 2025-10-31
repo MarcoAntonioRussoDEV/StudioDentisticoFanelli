@@ -4,6 +4,7 @@ import Link from "next/link";
 import ContactButton from "./ContactButton";
 import { Menu } from "lucide-react";
 import Image from "next/image";
+import { withBasePath } from "@/app/lib/basePath";
 
 const Navbar = () => {
     return (
@@ -14,7 +15,7 @@ const Navbar = () => {
                     href="/"
                 >
                     <Image
-                        src="/images/logo-fanelli.svg"
+                        src={withBasePath("/images/logo-fanelli.svg")}
                         alt="Studio Dentistico Fanelli"
                         height={160}
                         width={160}

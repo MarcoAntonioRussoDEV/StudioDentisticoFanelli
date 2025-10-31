@@ -4,12 +4,13 @@ import { MapPin } from "lucide-react";
 import Button from "../Button";
 import ContactButton from "../ContactButton";
 import Link from "next/link";
+import { withBasePath } from "@/app/lib/basePath";
 
 const HeroSection = () => {
     return (
         <div className="flex min-h-screen flex-col items-center justify-center relative">
             <Image
-                src="/images/hero.jpg"
+                src={withBasePath("/images/hero.jpg")}
                 alt="Studio Dentistico Fanelli immagine header"
                 fill
                 priority
@@ -19,7 +20,7 @@ const HeroSection = () => {
                 <section className="container mx-auto font-bold px-4">
                     <div className="flex items-center gap-4">
                         <Image
-                            src="/images/logo-bianco.svg"
+                            src={withBasePath("/images/logo-bianco.svg")}
                             alt="Studio Dentistico Fanelli immagine header"
                             width={160}
                             height={160}
