@@ -3,79 +3,88 @@ import Carousel from "@/app/components/Carousel";
 import IconBox from "@/app/components/IconBox";
 import { services } from "@/app/lib/data/services";
 import { CheckCircle, Clock } from "lucide-react";
+import React from "react";
 
 const page = () => {
-    const service = services.filter(s => s.slug === "pedodonzia")[0];
+    const service = services.filter(s => s.slug === "endodonzia")[0];
+
+    const benefits = [
+        "Eliminazione definitiva del dolore (pulpite) e dell'infezione",
+        "Salvaguardia del dente in arcata, evitando l'estrazione e i costi futuri di un impianto o ponte",
+        "Risoluzione di lesioni croniche (granulomi o cisti) all'apice della radice",
+        "Mantenimento della funzione masticatoria naturale",
+        "Esecuzione rapida e precisa grazie alle moderne tecnologie come i localizzatori apicali e sistemi ingrandenti",
+    ];
 
     const treatments = [
         {
-            title: "Prevenzione e Controlli Periodici",
+            title: "Trattamento Endodontico (Devitalizzazione)",
             description:
-                "I controlli ogni 6 mesi sono fondamentali in questa fase di crescita per monitorare la permuta dei denti e valutare la qualità dell'igiene quotidiana. Le radiografie ci aiutano a verificare che tutto stia procedendo per il meglio e a prevenire problemi complessi in futuro.",
+                "Il trattamento endodontico consiste nella rimozione completa della polpa infetta o infiammata all'interno dei canali radicolari, disinfezione dello spazio e sigillatura tridimensionale. Questo processo elimina il dolore e l'infezione, salvando il dente ed evitando l'estrazione.",
             frequency:
-                "Controllo ogni 6 mesi per monitoraggio e prevenzione ottimale.",
+                "Su necessità, in presenza di pulpiti irreversibili, necrosi pulpare, ascessi o granulomi.",
             recommended:
-                "Tutti i bambini (dal primo anno di vita) per stabilire una corretta abitudine di prevenzione e monitorare il naturale sviluppo dell'occlusione.",
+                "Pazienti con carie molto profonde quando l'infezione ha raggiunto la polpa e provoca dolore pulsante o persistente (pulpite irreversibile). Essenziale anche per pazienti con ascessi o granulomi per curare l'infezione cronica all'apice della radice.",
         },
         {
-            title: "Igiene Professionale e Fluoroprofilassi",
+            title: "Ritrattamento Endodontico",
             description:
-                "Pulizia delicata dei denti con istruzioni personalizzate di igiene orale e applicazione di fluoro o sigillanti per rinforzare lo smalto e prevenire la carie. Un approccio gentile per rendere l'esperienza positiva.",
-            frequency: "Ogni 6 mesi o secondo necessità individuali.",
+                "Quando una vecchia devitalizzazione non ha avuto successo o si è reinfettata nel tempo, il ritrattamento endodontico permette di rimuovere i materiali di riempimento precedenti e ripetere la cura canalare. Utilizziamo strumenti avanzati e microscopi operatori per garantire il massimo successo.",
+            frequency:
+                "Su necessità, in caso di fallimento di precedenti trattamenti endodontici o persistenza di lesioni periapicali.",
             recommended:
-                "Bambini con carie multiple o rischio elevato che necessitano di un programma di igiene e prevenzione più intensivo, come l'applicazione di sigillanti sui solchi dei molari permanenti appena erotti (circa 6-7 anni).",
+                "Pazienti con vecchie devitalizzazioni infette che presentano dolore, gonfiore o lesioni radiografiche. Il ritrattamento rappresenta l'ultima possibilità per salvare il dente prima dell'estrazione.",
         },
-        {
-            title: "Trattamento delle Carie Pediatriche",
-            description:
-                "Terapia conservativa (otturazioni) e, se necessario, polpotomia sui denti decidui (da latte) per mantenerli in arcata fino alla permuta naturale. Utilizziamo tecniche delicate per garantire comfort e serenità al bambino.",
-            frequency: "In base alle necessità cliniche individuali.",
-            recommended:
-                "Bambini con carie sui denti da latte che necessitano di intervento per evitare dolore, infezioni e perdita prematura degli elementi dentari.",
-        },
-    ];
-
-    const benefits = [
-        "Prevenzione efficace della Carie e della 'sindrome da biberon'",
-        "Guida dello sviluppo scheletrico e dentale (Ortodonzia Intercettiva)",
-        "Miglioramento della collaborazione e riduzione della paura del dentista",
-        "Corretto mantenimento dello spazio per l'eruzione dei denti permanenti",
-        "Salute orale ottimale che incide positivamente sulla masticazione, alimentazione e fonazione del bambino",
     ];
 
     const steps = [
         {
-            title: "Valutazione e Intercettazione",
+            title: "Diagnosi (Esame ed Rx)",
             description:
-                "Esame della bocca e delle strutture scheletriche. Diagnosi precoce di carie, malocclusioni e abitudini viziate (es. succhiamento del pollice).",
+                "Conferma della diagnosi (spesso in presenza di dolore acuto o di lesioni periapicali) e valutazione della complessità del sistema canalare.",
         },
         {
-            title: "Igiene e Fluoroprofilassi",
+            title: "Anestesia e Isolamento",
             description:
-                "Pulizia delicata, istruzioni personalizzate di igiene e applicazione di fluoro/sigillanti per rinforzare lo smalto e prevenire la carie.",
+                "Applicazione di anestesia locale e isolamento del dente con la diga di gomma per garantire un campo operatorio sterile.",
         },
         {
-            title: "Trattamento",
+            title: "Accesso e Strumentazione",
             description:
-                "Terapia conservativa (otturazioni) e, se necessario, polpotomia sui denti decidui (da latte) per mantenerli in arcata fino alla permuta.",
+                "Apertura della camera pulpare, rimozione del tessuto infetto e sagomatura meccanica dei canali radicolari.",
         },
         {
-            title: "Controllo dello Sviluppo",
+            title: "Irrigazione e Disinfezione",
             description:
-                "Monitoraggio dell'eruzione dei denti permanenti e indicazioni per l'ortodonzia intercettiva (se necessaria).",
+                "Pulizia chimica approfondita dei canali per eliminare tutti i batteri residui.",
+        },
+        {
+            title: "Otturazione (Riempimento)",
+            description:
+                "Sigillatura ermetica dei canali con materiale biocompatibile (solitamente guttaperca), seguita dal restauro provvisorio della corona.",
+        },
+        {
+            title: "Restauro Definitivo",
+            description:
+                "Trattamento di ricostruzione finale del dente trattato, spesso con perno e corona, per proteggerlo da fratture.",
         },
     ];
 
     const targetAudience = [
         {
-            title: "Tutti i bambini (dal primo anno di vita)",
+            title: "Carie Profonde e Pulpiti",
             description:
-                "Per stabilire una corretta abitudine di prevenzione e monitorare il naturale sviluppo dell'occlusione.",
+                "Quando l'infezione ha raggiunto la polpa e provoca dolore pulsante o persistente (pulpite irreversibile), la devitalizzazione è l'unica soluzione per eliminare il dolore e salvare il dente.",
         },
         {
-            title: "Bambini con carie multiple o rischio elevato",
+            title: "Ascessi e Granulomi",
             description:
-                "Necessitano di un programma di igiene e prevenzione più intensivo, come l'applicazione di sigillanti sui solchi dei molari permanenti appena erotti (circa 6-7 anni).",
+                "Per curare l'infezione cronica all'apice della radice, risolvendo gonfiori, fistole e lesioni ossee visibili alla radiografia.",
+        },
+        {
+            title: "Ritrattamenti",
+            description:
+                "Pazienti con vecchie devitalizzazioni infette che necessitano di rimuovere i materiali di riempimento precedenti e ripetere la cura canalare per salvare il dente.",
         },
     ];
 
@@ -91,14 +100,12 @@ const page = () => {
                             </h1>
                         </div>
                         <p className="text-2xl">
-                            La pedodonzia è la branca dell&apos;odontoiatria
-                            dedicata alla salute orale dei bambini, dalla prima
-                            infanzia fino all&apos;adolescenza. Programma
-                            completo di prevenzione, diagnosi e trattamento
-                            delle patologie orali tipiche dell&apos;età
-                            pediatrica, con un approccio mirato e non traumatico
-                            per creare un&apos;esperienza positiva e costruire
-                            le basi per una salute orale duratura.
+                            Il trattamento endodontico consiste nella rimozione
+                            completa della polpa infetta o infiammata
+                            all&apos;interno dei canali radicolari, disinfezione
+                            dello spazio e sigillatura tridimensionale. Questo
+                            processo elimina il dolore e l&apos;infezione,
+                            salvando il dente.
                         </p>
                     </section>
                     <Carousel images={service.images} />
@@ -108,7 +115,7 @@ const page = () => {
             {/* Perché Scegliere i Nostri Servizi */}
             <article className="container mx-auto py-16 px-4">
                 <h2 className="text-4xl font-bold text-center py-16">
-                    Perché Scegliere i Nostri Servizi di Pedodonzia?
+                    Perché Scegliere i Nostri Servizi di Endodonzia?
                 </h2>
                 <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {benefits.map((benefit, index) => (
@@ -166,12 +173,12 @@ const page = () => {
                 </section>
             </article>
 
-            {/* Come Funziona la Visita Pedodontica */}
+            {/* Come Funziona il Trattamento Endodontico */}
             <article className="container mx-auto py-16 px-4">
                 <h2 className="text-4xl font-bold text-center py-16">
-                    Come Funziona la Visita Pedodontica
+                    Come Funziona il Trattamento Endodontico
                 </h2>
-                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {steps.map((step, index) => (
                         <div
                             className="flex flex-col gap-4 justify-between items-center"
@@ -196,7 +203,7 @@ const page = () => {
                 <h2 className="text-4xl font-bold text-center py-16">
                     Consigliato per Chi?
                 </h2>
-                <section className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <section className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {targetAudience.map((audience, index) => (
                         <div
                             className="bg-gradient-to-br from-primary-50 to-primary-100 p-8 rounded-2xl"
@@ -217,15 +224,15 @@ const page = () => {
             <article className="container mx-auto py-16 px-4">
                 <div className="bg-gradient-to-br from-primary to-primary-600 text-white rounded-3xl p-12 text-center">
                     <h2 className="text-4xl font-bold mb-6">
-                        Un Approccio Delicato per i Più Piccoli
+                        Endodonzia di Precisione
                     </h2>
                     <p className="text-xl leading-relaxed max-w-4xl mx-auto">
-                        Nel nostro studio creiamo un ambiente accogliente e
-                        rassicurante per far vivere ai bambini
-                        un&apos;esperienza positiva dal dentista. Il nostro
-                        obiettivo è educare alla prevenzione fin dalla prima
-                        infanzia, costruendo le basi per una salute orale
-                        duratura.
+                        Nel nostro studio utilizziamo tecnologie avanzate come
+                        localizzatori apicali elettronici, strumentazione
+                        meccanica rotatoria e sistemi ingrandenti per garantire
+                        trattamenti endodontici precisi ed efficaci. Il nostro
+                        obiettivo è eliminare l&apos;infezione, preservare il
+                        dente naturale e restituirti un sorriso senza dolore.
                     </p>
                 </div>
             </article>
@@ -236,12 +243,12 @@ const page = () => {
             </article>
             <article className="container mx-auto py-16 px-4 flex flex-col gap-16 items-center">
                 <h2 className="text-4xl font-bold text-center">
-                    Prenota la Prima Visita del tuo Bambino
+                    Prenota la tua Visita Endodontica
                 </h2>
                 <p className="text-soft text-xl text-center max-w-3xl">
-                    Inizia il percorso di prevenzione e cura dentale del tuo
-                    bambino. Contattaci per una visita pedodontica completa e
-                    personalizzata in un ambiente sereno e accogliente.
+                    Non sopportare il dolore dentale. La devitalizzazione può
+                    salvare il tuo dente ed eliminare definitivamente
+                    l&apos;infezione e il dolore.
                 </p>
                 <section className="flex flex-col md:flex-row gap-4 items-stretch">
                     <ContactButton

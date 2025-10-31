@@ -3,79 +3,92 @@ import Carousel from "@/app/components/Carousel";
 import IconBox from "@/app/components/IconBox";
 import { services } from "@/app/lib/data/services";
 import { CheckCircle, Clock } from "lucide-react";
+import React from "react";
 
 const page = () => {
-    const service = services.filter(s => s.slug === "pedodonzia")[0];
+    const service = services.filter(s => s.slug === "conservativa")[0];
+
+    const benefits = [
+        "Arresto dell'evoluzione della carie e prevenzione di infezioni più gravi (pulpite)",
+        "Risultato estetico elevato grazie a restauri tooth-colored (del colore del dente)",
+        "Mantenimento della vitalità del dente, evitando la necessità di devitalizzazione (endodonzia)",
+        "Ripristino della corretta funzione masticatoria",
+        "Durata e resistenza del dente nel tempo",
+    ];
 
     const treatments = [
         {
-            title: "Prevenzione e Controlli Periodici",
+            title: "Trattamento delle Carie con Restauri Diretti",
             description:
-                "I controlli ogni 6 mesi sono fondamentali in questa fase di crescita per monitorare la permuta dei denti e valutare la qualità dell'igiene quotidiana. Le radiografie ci aiutano a verificare che tutto stia procedendo per il meglio e a prevenire problemi complessi in futuro.",
+                "Il trattamento della carie consiste nella rimozione del tessuto dentale cariato o compromesso e ricostruzione del dente mediante l'uso di materiali compositi che replicano fedelmente colore e forma del dente naturale. Utilizziamo tecniche adesive moderne per garantire risultati estetici e funzionali eccellenti.",
             frequency:
-                "Controllo ogni 6 mesi per monitoraggio e prevenzione ottimale.",
+                "Su necessità, in seguito a diagnosi di carie, fratture o usura dentale.",
             recommended:
-                "Tutti i bambini (dal primo anno di vita) per stabilire una corretta abitudine di prevenzione e monitorare il naturale sviluppo dell'occlusione.",
+                "Pazienti con carie accertate per fermare il processo distruttivo e salvare il dente. Ideale anche per pazienti con vecchie otturazioni in amalgama da sostituire con materiali più estetici e biocompatibili.",
         },
         {
-            title: "Igiene Professionale e Fluoroprofilassi",
+            title: "Intarsi Estetici in Ceramica o Composito",
             description:
-                "Pulizia delicata dei denti con istruzioni personalizzate di igiene orale e applicazione di fluoro o sigillanti per rinforzare lo smalto e prevenire la carie. Un approccio gentile per rendere l'esperienza positiva.",
-            frequency: "Ogni 6 mesi o secondo necessità individuali.",
+                "Per ricostruzioni più estese, realizziamo intarsi in ceramica o composito che vengono progettati e fabbricati con precisione digitale. Questi restauri indiretti offrono una resistenza superiore e un'estetica eccezionale, preservando al massimo la struttura dentale sana.",
+            frequency:
+                "In caso di cavità estese o necessità di sostituire vecchie otturazioni voluminose.",
             recommended:
-                "Bambini con carie multiple o rischio elevato che necessitano di un programma di igiene e prevenzione più intensivo, come l'applicazione di sigillanti sui solchi dei molari permanenti appena erotti (circa 6-7 anni).",
+                "Pazienti con carie estese o vecchie otturazioni ampie che necessitano di un restauro più resistente e duraturo. Perfetto per chi cerca il massimo dell'estetica e della funzionalità.",
         },
         {
-            title: "Trattamento delle Carie Pediatriche",
+            title: "Restauri Estetici per Scheggiature e Usura",
             description:
-                "Terapia conservativa (otturazioni) e, se necessario, polpotomia sui denti decidui (da latte) per mantenerli in arcata fino alla permuta naturale. Utilizziamo tecniche delicate per garantire comfort e serenità al bambino.",
-            frequency: "In base alle necessità cliniche individuali.",
+                "Ripristiniamo la forma originaria dei denti danneggiati da traumi, usura o bruxismo utilizzando materiali compositi di ultima generazione. Il risultato è un sorriso naturale e armonioso che protegge i denti da ulteriori danni.",
+            frequency:
+                "In base alle necessità individuali e al grado di usura o danneggiamento.",
             recommended:
-                "Bambini con carie sui denti da latte che necessitano di intervento per evitare dolore, infezioni e perdita prematura degli elementi dentari.",
+                "Pazienti con scheggiature o usura per ripristinare la forma originaria del dente e proteggerlo da ulteriori danni. Indicato anche per chi desidera migliorare l'estetica del sorriso.",
         },
-    ];
-
-    const benefits = [
-        "Prevenzione efficace della Carie e della 'sindrome da biberon'",
-        "Guida dello sviluppo scheletrico e dentale (Ortodonzia Intercettiva)",
-        "Miglioramento della collaborazione e riduzione della paura del dentista",
-        "Corretto mantenimento dello spazio per l'eruzione dei denti permanenti",
-        "Salute orale ottimale che incide positivamente sulla masticazione, alimentazione e fonazione del bambino",
     ];
 
     const steps = [
         {
-            title: "Valutazione e Intercettazione",
+            title: "Diagnosi",
             description:
-                "Esame della bocca e delle strutture scheletriche. Diagnosi precoce di carie, malocclusioni e abitudini viziate (es. succhiamento del pollice).",
+                "Identificazione della carie (anche in fase iniziale) tramite esame clinico, radiografie (Rx) o sistemi di rilevazione avanzati.",
         },
         {
-            title: "Igiene e Fluoroprofilassi",
+            title: "Anestesia (se necessaria)",
             description:
-                "Pulizia delicata, istruzioni personalizzate di igiene e applicazione di fluoro/sigillanti per rinforzare lo smalto e prevenire la carie.",
+                "Assicurazione del comfort del paziente durante la procedura.",
         },
         {
-            title: "Trattamento",
+            title: "Rimozione",
             description:
-                "Terapia conservativa (otturazioni) e, se necessario, polpotomia sui denti decidui (da latte) per mantenerli in arcata fino alla permuta.",
+                "Eliminazione selettiva del tessuto carioso e preparazione della cavità.",
         },
         {
-            title: "Controllo dello Sviluppo",
+            title: "Restauro",
             description:
-                "Monitoraggio dell'eruzione dei denti permanenti e indicazioni per l'ortodonzia intercettiva (se necessaria).",
+                "Ricostruzione del dente utilizzando tecniche adesive e stratificazione di materiali compositi e/o cementazione di intarsi.",
+        },
+        {
+            title: "Rifinitura ed Occlusione",
+            description:
+                "Lucidatura del restauro e verifica del corretto contatto con il dente antagonista.",
         },
     ];
 
     const targetAudience = [
         {
-            title: "Tutti i bambini (dal primo anno di vita)",
+            title: "Pazienti con Carie Accertate",
             description:
-                "Per stabilire una corretta abitudine di prevenzione e monitorare il naturale sviluppo dell'occlusione.",
+                "Per fermare il processo distruttivo e salvare il dente evitando complicazioni più gravi come pulpiti o ascessi.",
         },
         {
-            title: "Bambini con carie multiple o rischio elevato",
+            title: "Sostituzione Amalgama",
             description:
-                "Necessitano di un programma di igiene e prevenzione più intensivo, come l'applicazione di sigillanti sui solchi dei molari permanenti appena erotti (circa 6-7 anni).",
+                "Pazienti con vecchie otturazioni in amalgama che desiderano sostituirle con materiali più estetici, biocompatibili e sicuri.",
+        },
+        {
+            title: "Scheggiature o Usura",
+            description:
+                "Per ripristinare la forma originaria del dente e proteggerlo da ulteriori danni, migliorando anche l'aspetto estetico del sorriso.",
         },
     ];
 
@@ -91,14 +104,12 @@ const page = () => {
                             </h1>
                         </div>
                         <p className="text-2xl">
-                            La pedodonzia è la branca dell&apos;odontoiatria
-                            dedicata alla salute orale dei bambini, dalla prima
-                            infanzia fino all&apos;adolescenza. Programma
-                            completo di prevenzione, diagnosi e trattamento
-                            delle patologie orali tipiche dell&apos;età
-                            pediatrica, con un approccio mirato e non traumatico
-                            per creare un&apos;esperienza positiva e costruire
-                            le basi per una salute orale duratura.
+                            Il trattamento della carie consiste nella rimozione
+                            del tessuto dentale cariato o compromesso e
+                            ricostruzione del dente mediante l&apos;uso di
+                            materiali compositi o intarsi in ceramica/composito
+                            che replicano fedelmente colore e forma del dente
+                            naturale.
                         </p>
                     </section>
                     <Carousel images={service.images} />
@@ -108,7 +119,7 @@ const page = () => {
             {/* Perché Scegliere i Nostri Servizi */}
             <article className="container mx-auto py-16 px-4">
                 <h2 className="text-4xl font-bold text-center py-16">
-                    Perché Scegliere i Nostri Servizi di Pedodonzia?
+                    Perché Scegliere i Nostri Servizi di Restauri Estetici?
                 </h2>
                 <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {benefits.map((benefit, index) => (
@@ -166,12 +177,12 @@ const page = () => {
                 </section>
             </article>
 
-            {/* Come Funziona la Visita Pedodontica */}
+            {/* Come Funziona il Trattamento */}
             <article className="container mx-auto py-16 px-4">
                 <h2 className="text-4xl font-bold text-center py-16">
-                    Come Funziona la Visita Pedodontica
+                    Come Funziona il Trattamento delle Carie
                 </h2>
-                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
                     {steps.map((step, index) => (
                         <div
                             className="flex flex-col gap-4 justify-between items-center"
@@ -196,7 +207,7 @@ const page = () => {
                 <h2 className="text-4xl font-bold text-center py-16">
                     Consigliato per Chi?
                 </h2>
-                <section className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <section className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {targetAudience.map((audience, index) => (
                         <div
                             className="bg-gradient-to-br from-primary-50 to-primary-100 p-8 rounded-2xl"
@@ -217,15 +228,15 @@ const page = () => {
             <article className="container mx-auto py-16 px-4">
                 <div className="bg-gradient-to-br from-primary to-primary-600 text-white rounded-3xl p-12 text-center">
                     <h2 className="text-4xl font-bold mb-6">
-                        Un Approccio Delicato per i Più Piccoli
+                        Restauri Conservativi di Qualità
                     </h2>
                     <p className="text-xl leading-relaxed max-w-4xl mx-auto">
-                        Nel nostro studio creiamo un ambiente accogliente e
-                        rassicurante per far vivere ai bambini
-                        un&apos;esperienza positiva dal dentista. Il nostro
-                        obiettivo è educare alla prevenzione fin dalla prima
-                        infanzia, costruendo le basi per una salute orale
-                        duratura.
+                        Nel nostro studio utilizziamo materiali compositi di
+                        ultima generazione e tecniche adesive avanzate per
+                        garantire restauri estetici, resistenti e
+                        biocompatibili. Il nostro obiettivo è preservare al
+                        massimo la struttura dentale naturale, assicurando
+                        risultati duraturi e un sorriso sano.
                     </p>
                 </div>
             </article>
@@ -236,12 +247,12 @@ const page = () => {
             </article>
             <article className="container mx-auto py-16 px-4 flex flex-col gap-16 items-center">
                 <h2 className="text-4xl font-bold text-center">
-                    Prenota la Prima Visita del tuo Bambino
+                    Prenota la tua Visita
                 </h2>
                 <p className="text-soft text-xl text-center max-w-3xl">
-                    Inizia il percorso di prevenzione e cura dentale del tuo
-                    bambino. Contattaci per una visita pedodontica completa e
-                    personalizzata in un ambiente sereno e accogliente.
+                    Non aspettare che la carie progredisca. Intervieni subito
+                    per salvare i tuoi denti e ripristinare un sorriso sano e
+                    naturale.
                 </p>
                 <section className="flex flex-col md:flex-row gap-4 items-stretch">
                     <ContactButton

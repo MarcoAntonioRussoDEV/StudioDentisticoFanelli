@@ -1,7 +1,8 @@
+"use client";
+
 import { services } from "@/app/lib/data/services";
-import { Phone } from "lucide-react";
 import React from "react";
-import Button from "../Button";
+import ContactButton from "../ContactButton";
 import ServicesCard from "../ServicesCard";
 
 const ServicesSection = () => {
@@ -22,10 +23,11 @@ const ServicesSection = () => {
                         />
                     ))}
                 </div>
-                <Button className="px-16 py-6 rounded-3xl">
-                    <Phone size={32} />
-                    Prenota la tua visita
-                </Button>
+                <ContactButton
+                    action="phone"
+                    className="px-16 py-6 rounded-3xl"
+                    showIcon
+                />
             </div>
         </article>
     );

@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import Link from "next/link";
 
 interface ChairsideCardProps {
     title?: string;
@@ -12,8 +13,8 @@ interface ChairsideCardProps {
 const ChairsideCard: React.FC<ChairsideCardProps> = ({
     title = "Progettazione Digitale",
     description = "Software CAD avanzato per una precisione millimetrica nella progettazione delle protesi.",
-    videoSrc = "./videos/Fanelli.mp4",
-    videoPoster = "./images/frame-placeholder-video-chairside.png",
+    videoSrc = "/videos/Fanelli.mp4",
+    videoPoster = "/images/frame-placeholder-video-chairside.png",
     videoAlt = "Video della progettazione digitale dentale con software CAD - Studio Dentistico Fanelli",
 }) => {
     return (
@@ -50,31 +51,6 @@ const ChairsideCard: React.FC<ChairsideCardProps> = ({
                         .
                     </p>
                 </video>
-
-                {/* Schema Markup per Video */}
-                {/* <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
-                            "@context": "https://schema.org",
-                            "@type": "VideoObject",
-                            name: title,
-                            description: description,
-                            contentUrl: `https://marcoantoniorussodev.github.io/StudioDentisticoFanelli${videoSrc}`,
-                            thumbnailUrl: videoPoster
-                                ? `https://marcoantoniorussodev.github.io/StudioDentisticoFanelli${videoPoster}`
-                                : undefined,
-                            uploadDate: new Date().toISOString(),
-                            publisher: {
-                                "@type": "Organization",
-                                name: "Studio Dentistico Fanelli",
-                                url: "https://marcoantoniorussodev.github.io/StudioDentisticoFanelli",
-                            },
-                            duration: "00:00:18",
-                            embedUrl: `https://marcoantoniorussodev.github.io/StudioDentisticoFanelli${videoSrc}`,
-                        }),
-                    }}
-                /> */}
             </div>
 
             {/* Content Section */}
@@ -85,7 +61,9 @@ const ChairsideCard: React.FC<ChairsideCardProps> = ({
                     Dalla scansione alla protesi finale applicata, tutto in una
                     sola seduta.
                 </p>
-                <Button className="mt-auto">Prenota la tua seduta</Button>
+                <Link href={"/#contacts"}>
+                    <Button className="mt-auto">Prenota la tua seduta</Button>
+                </Link>
             </div>
         </div>
     );

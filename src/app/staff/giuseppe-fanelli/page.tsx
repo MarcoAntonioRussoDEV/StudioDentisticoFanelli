@@ -1,4 +1,5 @@
 import Button from "@/app/components/Button";
+import ContactButton from "@/app/components/ContactButton";
 import { team } from "@/app/lib/data/team";
 import {
     ArrowLeft,
@@ -137,12 +138,13 @@ const page = () => {
                                 Tribunale di Foggia.
                             </p>
                         </div>
-                        <Button
+                        <ContactButton
+                            action="phone"
                             variant="default"
                             className="w-fit"
                         >
                             Prenota una visita
-                        </Button>
+                        </ContactButton>
                     </div>
                 </section>
 
@@ -342,20 +344,20 @@ const page = () => {
                         esperienza al tuo servizio
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button
-                            variant="default"
-                            className="bg-white text-primary hover:bg-gray-100"
+                        <ContactButton
+                            action="phone"
+                            className="bg-white text-primary"
                         >
                             Prenota una visita
-                        </Button>
-                        <Link href="/#contacts">
-                            <Button
-                                variant="outline"
-                                className="border-white text-white hover:bg-white/10"
-                            >
-                                Contattaci
-                            </Button>
-                        </Link>
+                        </ContactButton>
+                        <ContactButton
+                            action="form"
+                            variant="outline"
+                            className="border-white text-white hover:bg-white/10"
+                            showIcon={false}
+                        >
+                            Contattaci
+                        </ContactButton>
                     </div>
                 </section>
             </article>

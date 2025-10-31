@@ -12,7 +12,7 @@
         "@digicroz/react-floating-whatsapp": "^1.0.2",
         "@emailjs/browser": "^4.4.1",
         "@next/third-parties": "^16.0.1",
-        "@react-google-maps/api": "^2.20.7",
+        "@vis.gl/react-google-maps": "^1.7.0",
         "aos": "^2.3.4",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",

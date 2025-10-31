@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import { socials } from "../lib/data/socials";
 import { services } from "../lib/data/services";
 import Link from "next/link";
 import { contacts } from "../lib/data/contacts";
 import Button from "./Button";
+import { openPhone } from "../lib/utils";
 
 const Footer = () => {
     return (
@@ -11,7 +14,7 @@ const Footer = () => {
             <article className="container mx-auto grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-16">
                 {/* Social */}
                 <section className="flex flex-col gap-4">
-                    <h5 className="text-xl font-bold">
+                    <h5 className="text-xl font-bold border-b">
                         Studio Dentistico Fanelli
                     </h5>
                     <p>
@@ -36,8 +39,10 @@ const Footer = () => {
                 </section>
                 {/* Services */}
                 <section className="flex flex-col gap-4">
-                    <h5 className="text-xl font-bold">I nostri servizi</h5>
-                    <div className="flex flex-col gap-4">
+                    <h5 className="text-xl font-bold border-b">
+                        I nostri servizi
+                    </h5>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
                         {services.map(service => (
                             <Link
                                 key={service.title}
@@ -53,29 +58,34 @@ const Footer = () => {
                 </section>
                 {/* Contacts */}
                 <section className="flex flex-col gap-4">
-                    <h5 className="text-xl font-bold">Contatti</h5>
+                    <h5 className="text-xl font-bold border-b">Contatti</h5>
                     <div className="flex flex-col gap-4">
                         {contacts
                             .filter(
                                 contact => contact.label !== "Orari di Apertura"
                             )
                             .map(contact => (
-                                <Link
+                                <a
                                     key={contact.label}
-                                    href={"contact.url"}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-2 hover:underline"
+                                    className="flex items-center gap-2 hover:underline cursor-pointer"
+                                    onClick={() => {
+                                        navigator.clipboard.writeText(
+                                            contact.value
+                                        );
+                                        alert("Copiato negli appunti");
+                                    }}
                                 >
                                     <contact.icon className="text-primary" />
                                     {contact.value}
-                                </Link>
+                                </a>
                             ))}
                     </div>
                 </section>
                 {/* Open Hours */}
                 <section className="flex flex-col gap-4 md:items-start">
-                    <h5 className="text-xl font-bold">Orari di Apertura</h5>
+                    <h5 className="text-xl font-bold border-b w-full">
+                        Orari di Apertura
+                    </h5>
                     <div className="flex flex-col gap-4 ">
                         {contacts
                             .filter(
@@ -91,7 +101,12 @@ const Footer = () => {
                                 </p>
                             ))}
                     </div>
-                    <Button variant={"default"}>Prenota Ora</Button>
+                    <Button
+                        variant={"default"}
+                        onClick={() => openPhone()}
+                    >
+                        Prenota Ora
+                    </Button>
                 </section>
             </article>
             <div className="container mx-auto border-b  border-white my-8"></div>

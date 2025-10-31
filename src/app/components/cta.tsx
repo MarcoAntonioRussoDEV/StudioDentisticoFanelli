@@ -12,7 +12,7 @@ const Cta = () => {
         <FloatingWhatsApp
             phoneNumber={`+39${phoneNumber}`}
             accountName="Studio Dentistico Fanelli"
-            avatar="images/logo-bianco.svg"
+            avatar="/images/logo-bianco.svg"
             statusMessage="Rispondiamo in pochi minuti"
             chatMessage="Ciao! 👋 Come possiamo aiutarti oggi?"
             placeholder="Scrivi un messaggio"

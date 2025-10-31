@@ -1,4 +1,5 @@
 import Button from "@/app/components/Button";
+import ContactButton from "@/app/components/ContactButton";
 import { team } from "@/app/lib/data/team";
 import {
     ArrowLeft,
@@ -124,12 +125,13 @@ const page = () => {
                                 pediatrica.
                             </p>
                         </div>
-                        <Button
+                        <ContactButton
+                            action="phone"
                             variant="default"
                             className="w-fit"
                         >
                             Prenota una visita
-                        </Button>
+                        </ContactButton>
                     </div>
                 </section>
 
@@ -424,19 +426,22 @@ const page = () => {
                         Specialista in Ortodonzia e Odontoiatria Pediatrica
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button
+                        <ContactButton
+                            action="phone"
                             variant="default"
                             className="bg-white text-primary hover:bg-gray-100"
                         >
                             Prenota una visita
-                        </Button>
+                        </ContactButton>
                         <Link href="/#contacts">
-                            <Button
+                            <ContactButton
+                                action="form"
                                 variant="outline"
                                 className="border-white text-white hover:bg-white/10"
+                                showIcon={false}
                             >
                                 Contattaci
-                            </Button>
+                            </ContactButton>
                         </Link>
                     </div>
                 </section>

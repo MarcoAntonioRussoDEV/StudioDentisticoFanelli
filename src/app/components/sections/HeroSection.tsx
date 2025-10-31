@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
-import { MapPin, Phone } from "lucide-react";
+import { MapPin } from "lucide-react";
 import Button from "../Button";
+import ContactButton from "../ContactButton";
+import Link from "next/link";
 
 const HeroSection = () => {
     return (
@@ -34,19 +36,21 @@ const HeroSection = () => {
                     </p>
                 </section>
                 <section className="container mx-auto font-bold flex flex-col items-center lg:flex-row gap-4 px-4">
-                    <Button
-                        variant={"outline"}
+                    <ContactButton
+                        action="phone"
+                        variant="outline"
                         className="bg-white hover:bg-gray-100 text-black"
                     >
-                        <Phone size={20} />
                         Prenota una visita
-                    </Button>
-                    <Button
-                        variant={"outline"}
-                        className="border-white text-white hover:bg-white/10"
-                    >
-                        Scopri i nostri servizi
-                    </Button>
+                    </ContactButton>
+                    <Link href="#services">
+                        <Button
+                            variant={"outline"}
+                            className="border-white text-white hover:bg-white/10"
+                        >
+                            Scopri i nostri servizi
+                        </Button>
+                    </Link>
                 </section>
                 <section className="container px-4 mx-auto flex items-center gap-2 text-lg">
                     <MapPin />

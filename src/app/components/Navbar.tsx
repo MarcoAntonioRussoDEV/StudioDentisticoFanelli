@@ -1,25 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import Button from "./Button";
-import { Menu, Phone } from "lucide-react";
+import ContactButton from "./ContactButton";
+import { Menu } from "lucide-react";
 import Image from "next/image";
-import { contacts } from "../lib/data/contacts";
 
 const Navbar = () => {
-    const phoneNumber =
-        contacts.find(contact => contact.icon === Phone)?.value || "0881635896";
-
-    function scrollToContactForm(): void {
-        const element = document.getElementById("contact-form");
-        if (element) {
-            element.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-        }
-    }
-
     return (
         <nav className="w-full  p-4 sticky top-0 z-1 bg-background shadow-md">
             <div className="container mx-auto flex items-center justify-between">
@@ -38,19 +24,19 @@ const Navbar = () => {
                 <div className="justify-between gap-4 font-semibold hidden md:flex">
                     <Link
                         className="hover:underline"
-                        href="#services"
+                        href="/#services"
                     >
                         Servizi
                     </Link>
                     <Link
                         className=" hover:underline"
-                        href="#about_us"
+                        href="/#about_us"
                     >
                         Chi siamo
                     </Link>
                     <Link
                         className=" hover:underline"
-                        href="#contacts"
+                        href="/#contacts"
                     >
                         Contatti
                     </Link>
@@ -65,7 +51,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 className="hover:underline"
-                                href="#services"
+                                href="/#services"
                             >
                                 Servizi
                             </Link>
@@ -73,7 +59,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 className=" hover:underline"
-                                href="#about_us"
+                                href="/#about_us"
                             >
                                 Chi siamo
                             </Link>
@@ -81,46 +67,37 @@ const Navbar = () => {
                         <li>
                             <Link
                                 className=" hover:underline"
-                                href="#contacts"
+                                href="/#contacts"
                             >
                                 Contatti
                             </Link>
                         </li>
                         <li>
-                            <Button
-                                variant={"default"}
-                                onClick={() =>
-                                    window.open(
-                                        `tel:+39${phoneNumber}`,
-                                        "_self"
-                                    )
-                                }
+                            <ContactButton
+                                action="form"
+                                variant="default"
+                                showIcon={false}
                             >
                                 Prenota
-                            </Button>
+                            </ContactButton>
                         </li>
                     </ul>
                 </details>
                 {/* Desktop menu */}
                 <div className="justify-between gap-4 hidden md:flex">
-                    <Button
+                    <ContactButton
+                        action="phone"
                         variant="outline"
-                        onClick={() =>
-                            window.open(`tel:+39${phoneNumber}`, "_self")
-                        }
-                    >
-                        <Phone
-                            className="mr-2"
-                            size={16}
-                        />
-                        {phoneNumber}
-                    </Button>
-                    <Button
-                        variant={"default"}
-                        onClick={() => scrollToContactForm()}
+                        showPhoneNumber
+                        showIcon
+                    />
+                    <ContactButton
+                        action="form"
+                        variant="default"
+                        showIcon={false}
                     >
                         Prenota
-                    </Button>
+                    </ContactButton>
                 </div>
             </div>
         </nav>

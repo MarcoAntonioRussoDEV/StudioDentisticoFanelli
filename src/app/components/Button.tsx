@@ -28,7 +28,7 @@ const buttonVariants = cva(
 );
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
-    VariantProps<typeof buttonVariants>;
+    VariantProps<typeof buttonVariants> & { fill?: boolean };
 
 const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
     onClick,
@@ -36,6 +36,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
     variant,
     size,
     className,
+    fill = false,
 }) => {
     return (
         <GlareHover
@@ -45,7 +46,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
             glareSize={300}
             transitionDuration={800}
             playOnce={false}
-            className="inline-block"
+            className={`inline-block ${fill && "w-full"}`}
         >
             <button
                 onClick={onClick}

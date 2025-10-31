@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: "Roboto", Arial, sans-serif;
+                background-color: #f3f4f6;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="background-color: #f3f4f6; padding: 40px 20px">
+            <div
+                style="
+                    max-width: 600px;
+                    margin: 0 auto;
+                    background-color: #ffffff;
+                    border-radius: 16px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                    overflow: hidden;
+                "
+            >
+                <!-- Header con gradiente primary -->
+                <div
+                    style="
+                        background: linear-gradient(
+                            135deg,
+                            #0e7ba6 0%,
+                            #0a5d7f 100%
+                        );
+                        padding: 40px 30px;
+                        text-align: center;
+                    "
+                >
+                    <h1
+                        style="
+                            margin: 0;
+                            color: #ffffff;
+                            font-size: 28px;
+                            font-weight: bold;
+                        "
+                    >
+                        Studio Dentistico Fanelli
+                    </h1>
+                    <p
+                        style="
+                            margin: 10px 0 0 0;
+                            color: #e0f2fe;
+                            font-size: 16px;
+                        "
+                    >
+                        Nuovo Messaggio dal Sito Web
+                    </p>
+                </div>
+
+                <!-- Contenuto -->
+                <div style="padding: 40px 30px">
+                    <!-- Alert messaggio -->
+                    <div
+                        style="
+                            background-color: #dbeafe;
+                            border-left: 4px solid #0e7ba6;
+                            padding: 16px;
+                            margin-bottom: 30px;
+                            border-radius: 8px;
+                        "
+                    >
+                        <p
+                            style="
+                                margin: 0;
+                                color: #1e40af;
+                                font-size: 14px;
+                                font-weight: 600;
+                            "
+                        >
+                            📧 Hai ricevuto un nuovo messaggio da
+                            <strong>{{name}}</strong>
+                        </p>
+                    </div>
+
+                    <!-- Dati del contatto -->
+                    <div style="margin-bottom: 30px">
+                        <!-- Nome -->
+                        <div
+                            style="
+                                padding: 16px 0;
+                                border-bottom: 1px solid #e5e7eb;
+                            "
+                        >
+                            <div style="display: flex; align-items: flex-start">
+                                <div
+                                    style="
+                                        width: 32px;
+                                        height: 32px;
+                                        background-color: #dbeafe;
+                                        border-radius: 8px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        margin-right: 12px;
+                                    "
+                                >
+                                    <span style="font-size: 18px">👤</span>
+                                </div>
+                                <div style="flex: 1">
+                                    <p
+                                        style="
+                                            margin: 0;
+                                            color: #6b7280;
+                                            font-size: 12px;
+                                            font-weight: 600;
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.5px;
+                                        "
+                                    >
+                                        Nome
+                                    </p>
+                                    <p
+                                        style="
+                                            margin: 4px 0 0 0;
+                                            color: #111827;
+                                            font-size: 16px;
+                                            font-weight: 500;
+                                        "
+                                    >
+                                        {{name}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div
+                            style="
+                                padding: 16px 0;
+                                border-bottom: 1px solid #e5e7eb;
+                            "
+                        >
+                            <div style="display: flex; align-items: flex-start">
+                                <div
+                                    style="
+                                        width: 32px;
+                                        height: 32px;
+                                        background-color: #dbeafe;
+                                        border-radius: 8px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        margin-right: 12px;
+                                    "
+                                >
+                                    <span style="font-size: 18px">📧</span>
+                                </div>
+                                <div style="flex: 1">
+                                    <p
+                                        style="
+                                            margin: 0;
+                                            color: #6b7280;
+                                            font-size: 12px;
+                                            font-weight: 600;
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.5px;
+                                        "
+                                    >
+                                        Email
+                                    </p>
+                                    <p
+                                        style="
+                                            margin: 4px 0 0 0;
+                                            color: #111827;
+                                            font-size: 16px;
+                                            font-weight: 500;
+                                        "
+                                    >
+                                        <a
+                                            href="mailto:{{email}}"
+                                            style="
+                                                color: #0e7ba6;
+                                                text-decoration: none;
+                                            "
+                                            >{{email}}</a
+                                        >
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Telefono -->
+                        <div
+                            style="
+                                padding: 16px 0;
+                                border-bottom: 1px solid #e5e7eb;
+                            "
+                        >
+                            <div style="display: flex; align-items: flex-start">
+                                <div
+                                    style="
+                                        width: 32px;
+                                        height: 32px;
+                                        background-color: #dbeafe;
+                                        border-radius: 8px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        margin-right: 12px;
+                                    "
+                                >
+                                    <span style="font-size: 18px">📱</span>
+                                </div>
+                                <div style="flex: 1">
+                                    <p
+                                        style="
+                                            margin: 0;
+                                            color: #6b7280;
+                                            font-size: 12px;
+                                            font-weight: 600;
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.5px;
+                                        "
+                                    >
+                                        Telefono
+                                    </p>
+                                    <p
+                                        style="
+                                            margin: 4px 0 0 0;
+                                            color: #111827;
+                                            font-size: 16px;
+                                            font-weight: 500;
+                                        "
+                                    >
+                                        <a
+                                            href="tel:{{telephone}}"
+                                            style="
+                                                color: #0e7ba6;
+                                                text-decoration: none;
+                                            "
+                                            >{{telephone}}</a
+                                        >
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Data/Ora -->
+                        <div
+                            style="
+                                padding: 16px 0;
+                                border-bottom: 1px solid #e5e7eb;
+                            "
+                        >
+                            <div style="display: flex; align-items: flex-start">
+                                <div
+                                    style="
+                                        width: 32px;
+                                        height: 32px;
+                                        background-color: #fff3cd;
+                                        border-radius: 8px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        margin-right: 12px;
+                                    "
+                                >
+                                    <span style="font-size: 18px">🕐</span>
+                                </div>
+                                <div style="flex: 1">
+                                    <p
+                                        style="
+                                            margin: 0;
+                                            color: #6b7280;
+                                            font-size: 12px;
+                                            font-weight: 600;
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.5px;
+                                        "
+                                    >
+                                        Data e Ora
+                                    </p>
+                                    <p
+                                        style="
+                                            margin: 4px 0 0 0;
+                                            color: #111827;
+                                            font-size: 16px;
+                                            font-weight: 500;
+                                        "
+                                    >
+                                        {{timestamp}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Messaggio -->
+                    <div
+                        style="
+                            background-color: #f9fafb;
+                            border-radius: 12px;
+                            padding: 20px;
+                            margin-bottom: 30px;
+                            border: 1px solid #e5e7eb;
+                        "
+                    >
+                        <div style="display: flex; align-items: flex-start">
+                            <div
+                                style="
+                                    width: 32px;
+                                    height: 32px;
+                                    background-color: #dbeafe;
+                                    border-radius: 8px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin-right: 12px;
+                                    flex-shrink: 0;
+                                "
+                            >
+                                <span style="font-size: 18px">💬</span>
+                            </div>
+                            <div style="flex: 1">
+                                <p
+                                    style="
+                                        margin: 0 0 8px 0;
+                                        color: #6b7280;
+                                        font-size: 12px;
+                                        font-weight: 600;
+                                        text-transform: uppercase;
+                                        letter-spacing: 0.5px;
+                                    "
+                                >
+                                    Messaggio
+                                </p>
+                                <p
+                                    style="
+                                        margin: 0;
+                                        color: #374151;
+                                        font-size: 15px;
+                                        line-height: 1.6;
+                                        white-space: pre-wrap;
+                                    "
+                                >
+                                    {{message}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottone CTA -->
+                    <div style="text-align: center; padding: 20px 0">
+                        <a
+                            href="mailto:{{email}}"
+                            style="
+                                display: inline-block;
+                                background: linear-gradient(
+                                    135deg,
+                                    #0e7ba6 0%,
+                                    #0a5d7f 100%
+                                );
+                                color: #ffffff;
+                                text-decoration: none;
+                                padding: 14px 32px;
+                                border-radius: 12px;
+                                font-size: 16px;
+                                font-weight: 600;
+                                box-shadow: 0 4px 12px rgba(14, 123, 166, 0.3);
+                            "
+                        >
+                            📧 Rispondi via Email
+                        </a>
+                    </div>
+                </div>
+
+               
+                <!-- Copyright -->
+                <p
+                    style="
+                        text-align: center;
+                        color: #9ca3af;
+                        font-size: 12px;
+                    "
+                >
+                    © <script>document.write(new Date().getFullYear())</script> Studio Dentistico Fanelli. Tutti i diritti riservati.
+                </p>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

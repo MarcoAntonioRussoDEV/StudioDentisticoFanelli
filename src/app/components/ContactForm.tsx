@@ -1,15 +1,19 @@
 "use client";
 
-import React, { FormEvent, useRef } from "react";
+import React, { FormEvent, useRef, useState } from "react";
 import Button from "./Button";
 import emailjs from "@emailjs/browser";
+import { Mail, Phone, User, MessageSquare } from "lucide-react";
 
 const ContactForm = () => {
     const form = useRef<HTMLFormElement>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const sendEmail = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!form.current) return;
+
+        setIsSubmitting(true);
 
         emailjs
             .sendForm(
@@ -23,18 +27,32 @@ const ContactForm = () => {
             .then(
                 result => {
                     console.log(result.text);
-                    alert("Message sent successfully!");
+                    alert(
+                        "Messaggio inviato con successo! Ti contatteremo presto."
+                    );
                     form.current?.reset();
                 },
                 error => {
                     console.error(error);
-                    alert("An error occurred, please try again.");
+                    alert("Si è verificato un errore. Riprova più tardi.");
                 }
-            );
+            )
+            .finally(() => {
+                setIsSubmitting(false);
+            });
     };
 
     return (
-        <div>
+        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <div className="mb-8">
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                    Inviaci un Messaggio
+                </h3>
+                <p className="text-gray-600 text-lg">
+                    Compila il form e ti risponderemo il prima possibile
+                </p>
+            </div>
+
             <form
                 ref={form}
                 onSubmit={sendEmail}
@@ -42,56 +60,77 @@ const ContactForm = () => {
                 aria-labelledby="form-heading"
                 noValidate
                 id="contact-form"
+                className="space-y-6"
             >
-                <h3
+                <h4
                     id="form-heading"
                     className="sr-only"
                 >
                     Contact Form
-                </h3>
-                <div>
+                </h4>
+
+                {/* Nome */}
+                <div className="relative">
                     <label
-                        className="p-1"
+                        className="block text-gray-700 font-semibold mb-2"
                         htmlFor="name"
                     >
-                        Name
+                        Nome Completo
                     </label>
-                    <input
-                        id="name"
-                        className="border border-background p-4 rounded-lg bg-background-secondary block w-full"
-                        type="text"
-                        name="name"
-                        placeholder="Your Name"
-                        autoComplete="given-name"
-                        required
-                        aria-required="true"
-                        aria-describedby="name-help"
-                    />
+                    <div className="relative">
+                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <User
+                                className="text-primary"
+                                size={20}
+                            />
+                        </div>
+                        <input
+                            id="name"
+                            className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-200 bg-gray-50 hover:bg-white"
+                            type="text"
+                            name="name"
+                            placeholder="Mario Rossi"
+                            autoComplete="given-name"
+                            required
+                            aria-required="true"
+                            aria-describedby="name-help"
+                        />
+                    </div>
                     <span
                         id="name-help"
                         className="sr-only"
                     >
-                        Enter your full name
+                        Inserisci il tuo nome completo
                     </span>
                 </div>
-                <div>
+
+                {/* Telefono */}
+                <div className="relative">
                     <label
-                        className="p-1"
+                        className="block text-gray-700 font-semibold mb-2"
                         htmlFor="telephone"
                     >
-                        Telefono
+                        Numero di Telefono
                     </label>
-                    <input
-                        id="telephone"
-                        className="border border-background p-4 rounded-lg bg-background-secondary block w-full"
-                        type="text"
-                        name="telephone"
-                        placeholder="Numero di Telefono"
-                        autoComplete="tel"
-                        required
-                        aria-required="true"
-                        aria-describedby="telephone-help"
-                    />
+                    <div className="relative">
+                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <Phone
+                                className="text-primary"
+                                size={20}
+                            />
+                        </div>
+                        <input
+                            id="telephone"
+                            className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-200 bg-gray-50 hover:bg-white"
+                            type="tel"
+                            name="telephone"
+                            placeholder="+39 333 123 4567"
+                            autoComplete="tel"
+                            required
+                            aria-required="true"
+                            aria-describedby="telephone-help"
+                        />
+                    </div>
                     <span
                         id="telephone-help"
                         className="sr-only"
@@ -99,53 +138,73 @@ const ContactForm = () => {
                         Il tuo numero di telefono
                     </span>
                 </div>
-                <div>
+
+                {/* Email */}
+                <div className="relative">
                     <label
-                        className="p-1"
+                        className="block text-gray-700 font-semibold mb-2"
                         htmlFor="email"
                     >
                         Email
                     </label>
-                    <input
-                        id="email"
-                        className="border border-background p-4 rounded-lg bg-background-secondary block w-full"
-                        type="email"
-                        name="email"
-                        placeholder="Your Email"
-                        autoComplete="email"
-                        required
-                        aria-required="true"
-                        aria-describedby="email-help"
-                    />
+                    <div className="relative">
+                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <Mail
+                                className="text-primary"
+                                size={20}
+                            />
+                        </div>
+                        <input
+                            id="email"
+                            className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-200 bg-gray-50 hover:bg-white"
+                            type="email"
+                            name="email"
+                            placeholder="mario.rossi@example.com"
+                            autoComplete="email"
+                            required
+                            aria-required="true"
+                            aria-describedby="email-help"
+                        />
+                    </div>
                     <span
                         id="email-help"
                         className="sr-only"
                     >
-                        Enter your email address
+                        Inserisci il tuo indirizzo email
                     </span>
                 </div>
-                <div className="col-span-2">
+
+                {/* Messaggio */}
+                <div className="relative">
                     <label
-                        className="p-1"
+                        className="block text-gray-700 font-semibold mb-2"
                         htmlFor="message"
                     >
-                        Message
+                        Messaggio
                     </label>
-                    <textarea
-                        id="message"
-                        className="border border-background p-4 rounded-lg bg-background-secondary block w-full"
-                        name="message"
-                        placeholder="Your Message"
-                        rows={6}
-                        required
-                        aria-required="true"
-                        aria-describedby="message-help"
-                    ></textarea>
+                    <div className="relative">
+                        <div className="absolute top-4 left-4 pointer-events-none">
+                            <MessageSquare
+                                className="text-primary"
+                                size={20}
+                            />
+                        </div>
+                        <textarea
+                            id="message"
+                            className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-200 bg-gray-50 hover:bg-white resize-none"
+                            name="message"
+                            placeholder="Scrivi qui il tuo messaggio..."
+                            rows={6}
+                            required
+                            aria-required="true"
+                            aria-describedby="message-help"
+                        ></textarea>
+                    </div>
                     <span
                         id="message-help"
                         className="sr-only"
                     >
-                        Enter your message or inquiry
+                        Inserisci il tuo messaggio o richiesta
                     </span>
                 </div>
 
@@ -153,12 +212,48 @@ const ContactForm = () => {
                     id="_subject"
                     type="hidden"
                     name="_subject"
-                    value="New submission!"
+                    value="Nuovo messaggio dal sito Studio Fanelli"
                     aria-hidden="true"
-                ></input>
+                />
 
-                <div className="col-span-2 mt-16">
-                    <Button variant="default">Invia Messaggio</Button>
+                <div className="pt-4 w-full">
+                    <Button
+                        variant="default"
+                        size="lg"
+                        className="w-full"
+                        disabled={isSubmitting}
+                        fill
+                    >
+                        {isSubmitting ? (
+                            <>
+                                <svg
+                                    className="animate-spin h-5 w-5 mr-2"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <circle
+                                        className="opacity-25"
+                                        cx="12"
+                                        cy="12"
+                                        r="10"
+                                        stroke="currentColor"
+                                        strokeWidth="4"
+                                        fill="none"
+                                    />
+                                    <path
+                                        className="opacity-75"
+                                        fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                    />
+                                </svg>
+                                Invio in corso...
+                            </>
+                        ) : (
+                            <>
+                                <Mail size={20} />
+                                Invia Messaggio
+                            </>
+                        )}
+                    </Button>
                 </div>
             </form>
         </div>
