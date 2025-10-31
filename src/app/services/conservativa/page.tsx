@@ -112,7 +112,7 @@ const page = () => {
                             naturale.
                         </p>
                     </section>
-                    <Carousel images={service.images} />
+                    <Carousel images={service.images as string[]} />
                 </header>
             </article>
 

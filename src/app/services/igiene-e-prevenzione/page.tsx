@@ -54,7 +54,7 @@ const page = () => {
                         </div>
                         <p className="text-2xl">{service.description}</p>
                     </section>
-                    <Carousel images={service.images} />
+                    <Carousel images={service.images as string[]} />
                 </header>
             </article>
 

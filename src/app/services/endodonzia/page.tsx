@@ -108,7 +108,7 @@ const page = () => {
                             salvando il dente.
                         </p>
                     </section>
-                    <Carousel images={service.images} />
+                    <Carousel images={service.images as string[]} />
                 </header>
             </article>
 

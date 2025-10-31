@@ -101,7 +101,7 @@ const page = () => {
                             le basi per una salute orale duratura.
                         </p>
                     </section>
-                    <Carousel images={service.images} />
+                    <Carousel images={service.images as string[]} />
                 </header>
             </article>
 
