@@ -17,8 +17,9 @@ const Navbar = () => {
                     <Image
                         src={withBasePath("/images/logo-fanelli.svg")}
                         alt="Studio Dentistico Fanelli"
-                        height={160}
-                        width={160}
+                        height={0}
+                        width={0}
+                        style={{ height: "auto", width: "160px" }}
                         priority
                     />
                 </Link>

@@ -22,12 +22,13 @@ const HeroSection = () => {
                         <Image
                             src={withBasePath("/images/logo-bianco.svg")}
                             alt="Studio Dentistico Fanelli immagine header"
-                            width={160}
-                            height={160}
+                            width={0}
+                            height={0}
+                            style={{ height: "auto", width: "160px" }}
                             className="hidden lg:inline-block"
                             priority={true}
                         />
-                        <h1 className="max-w-2/3 text-7xl lg:text-8xl">
+                        <h1 className="max-w-2/3 text-6xl lg:text-8xl">
                             Studio Dentistico Fanelli
                         </h1>
                     </div>

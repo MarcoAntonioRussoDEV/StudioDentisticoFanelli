@@ -21,7 +21,7 @@ const ChairsideCard: React.FC<ChairsideCardProps> = ({
     return (
         <div
             className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center max-w-2xl w-full gap-0"
-            data-aos="fade-left"
+            data-aos="fade-up"
         >
             {/* Video Section */}
             <div className="relative flex-shrink-0 hidden lg:block w-full aspect-video">

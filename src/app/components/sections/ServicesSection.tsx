@@ -25,7 +25,7 @@ const ServicesSection = () => {
                 </div>
                 <ContactButton
                     action="phone"
-                    className="px-16 py-6 rounded-3xl"
+                    className="px-16 py-4 rounded-3xl"
                     showIcon
                 />
             </div>
