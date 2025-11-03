@@ -117,7 +117,7 @@ const page = () => {
                     <section className="flex flex-col items-start justify-start gap-16 w-full">
                         <div className="flex flex-col lg:flex-row items-center gap-4 w-full">
                             <IconBox iconSrc={service.icon} />
-                            <h1 className="text-6xl font-bold">
+                            <h1 className="text-4xl lg:text-6xl font-bold break-words w-full">
                                 {service.title}
                             </h1>
                         </div>

@@ -116,7 +116,7 @@ const page = () => {
                                 degli Studi di Foggia.
                             </p>
                             <p>
-                                Specializzato in odontoiatria digitale in ambito
+                                Si occupa di odontoiatria digitale in ambito
                                 protesico e chirurgico, conservativa ed
                                 endodonzia.
                             </p>

@@ -5,7 +5,7 @@ import { services } from "@/app/lib/data/services";
 import { CheckCircle, Clock } from "lucide-react";
 
 const page = () => {
-    const service = services.filter(s => s.slug === "igiene-e-prevenzione")[0];
+    const service = services.filter(s => s.slug === "laser")[0];
 
     const benefits = [
         "Prevenzione di carie e malattie gengivali e parodontali",
