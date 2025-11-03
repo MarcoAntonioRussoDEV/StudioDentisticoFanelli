@@ -16,6 +16,49 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Dott. Giuseppe Fanelli - Dentista Foggia | Studio Dentistico Fanelli",
+    description:
+        "Dott. Giuseppe Fanelli, odontoiatra e impiantologo a Foggia. Specializzato in implantologia, ortodonzia e odontoiatria forense. Libero professionista dal 1987, CTU Tribunale di Foggia.",
+    keywords:
+        "giuseppe fanelli dentista foggia, impiantologo foggia, odontoiatra foggia, implantologia foggia, dentista foggia, studio dentistico fanelli",
+    openGraph: {
+        title: "Dott. Giuseppe Fanelli - Dentista Foggia | Implantologia",
+        description:
+            "Odontoiatra e impiantologo presso Studio Dentistico Fanelli. Specializzato in implantologia, ortodonzia e odontoiatria forense.",
+        url: "https://studiodentisticofanelli.it/staff/giuseppe-fanelli",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Dott. Giuseppe Fanelli - Studio Dentistico Fanelli Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "profile",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Dott. Giuseppe Fanelli - Dentista Foggia",
+        description:
+            "Odontoiatra e impiantologo a Foggia. Prenota una consulenza.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical: "https://studiodentisticofanelli.it/staff/giuseppe-fanelli",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
+
 const page = () => {
     const member = team.find(m => m.slug === "giuseppe-fanelli");
     if (!member) {
@@ -102,7 +145,7 @@ const page = () => {
                     <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
                         <Image
                             src={member.image}
-                            alt={member.name}
+                            alt={`${member.name} - Odontoiatra e Impiantologo presso Studio Dentistico Fanelli Foggia`}
                             fill
                             className="object-cover"
                         />

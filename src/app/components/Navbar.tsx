@@ -16,7 +16,7 @@ const Navbar = () => {
                 >
                     <Image
                         src={withBasePath("/images/logo-fanelli.svg")}
-                        alt="Studio Dentistico Fanelli"
+                        alt="Studio Dentistico Fanelli - Logo dentista Foggia"
                         height={0}
                         width={0}
                         style={{ height: "auto", width: "160px" }}

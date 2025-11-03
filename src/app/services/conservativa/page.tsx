@@ -5,6 +5,49 @@ import { services } from "@/app/lib/data/services";
 import { CheckCircle, Clock } from "lucide-react";
 import React from "react";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Odontoiatria Conservativa Foggia | Cura Carie e Restauri Estetici - Studio Fanelli",
+    description:
+        "Odontoiatria conservativa a Foggia: trattamento carie, otturazioni estetiche e intarsi in ceramica. Restauri tooth-colored per preservare i denti naturali con tecniche moderne.",
+    keywords:
+        "odontoiatria conservativa foggia, cura carie foggia, otturazioni estetiche foggia, intarsi ceramica foggia, restauri dentali foggia, dentista foggia, otturazioni composite foggia",
+    openGraph: {
+        title: "Odontoiatria Conservativa Foggia | Cura Carie e Restauri Estetici - Studio Fanelli",
+        description:
+            "Trattamento della carie a Foggia con restauri estetici. Otturazioni e intarsi in materiali biocompatibili per preservare i denti naturali.",
+        url: "https://studiodentisticofanelli.it/services/conservativa",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Studio Dentistico Fanelli - Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Odontoiatria Conservativa Foggia | Cura Carie - Studio Fanelli",
+        description:
+            "Trattamento della carie a Foggia con restauri estetici. Prenota la tua visita.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical: "https://studiodentisticofanelli.it/services/conservativa",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
+
 const page = () => {
     const service = services.filter(s => s.slug === "conservativa")[0];
 

@@ -5,6 +5,50 @@ import { services } from "@/app/lib/data/services";
 import { CheckCircle, Clock } from "lucide-react";
 import { DifferencesProps } from "@/app/components/Differences";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Protesi Dentale Foggia | Corone, Ponti e Protesi Fisse - Studio Fanelli",
+    description:
+        "Protesi dentali fisse e mobili a Foggia. Corone, ponti, protesi su impianti e soluzioni personalizzate. Tecnologia digitale CAD-CAM per risultati precisi e duraturi.",
+    keywords:
+        "protesi dentale foggia, corone dentali foggia, ponti dentali foggia, protesi fisse foggia, protesi mobili foggia, dentista foggia, protesi su impianti foggia",
+    openGraph: {
+        title: "Protesi Dentale Foggia | Corone, Ponti e Protesi Fisse - Studio Fanelli",
+        description:
+            "Protesi dentali fisse e mobili a Foggia. Tecnologia digitale CAD-CAM per ripristinare funzionalità ed estetica del tuo sorriso.",
+        url: "https://studiodentisticofanelli.it/services/protesi-dentale",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Studio Dentistico Fanelli - Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Protesi Dentale Foggia | Corone e Ponti - Studio Fanelli",
+        description:
+            "Protesi dentali fisse e mobili a Foggia. Prenota la tua consulenza personalizzata.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical:
+            "https://studiodentisticofanelli.it/services/protesi-dentale",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
+
 const page = () => {
     const service = services.filter(s => s.slug === "protesi-dentale")[0];
     console.log("service: ", service.images);

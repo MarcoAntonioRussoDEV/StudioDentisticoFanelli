@@ -4,6 +4,49 @@ import IconBox from "@/app/components/IconBox";
 import { services } from "@/app/lib/data/services";
 import { CheckCircle, Clock } from "lucide-react";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Impiantologia Foggia | Impianti Dentali e Carico Immediato - Studio Fanelli",
+    description:
+        "Impianti dentali a Foggia con tecnologia digitale. Implantologia mini-invasiva, carico immediato e denti fissi in 24 ore. Soluzioni All-on-4 e All-on-6 per risultati duraturi.",
+    keywords:
+        "impiantologia foggia, impianti dentali foggia, carico immediato foggia, all on 4 foggia, all on 6 foggia, dentista foggia, impianti dentali carico immediato foggia",
+    openGraph: {
+        title: "Impiantologia Foggia | Impianti Dentali e Carico Immediato - Studio Fanelli",
+        description:
+            "Impianti dentali a Foggia con chirurgia computer-guidata. Denti fissi in 24 ore con tecnologia mini-invasiva e carico immediato.",
+        url: "https://studiodentisticofanelli.it/services/impiantologia",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Studio Dentistico Fanelli - Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Impiantologia Foggia | Impianti Dentali - Studio Fanelli",
+        description:
+            "Impianti dentali a Foggia con tecnologia digitale. Prenota la tua visita implantologica.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical: "https://studiodentisticofanelli.it/services/impiantologia",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
+
 const page = () => {
     const service = services.filter(s => s.slug === "impiantologia")[0];
 

@@ -5,6 +5,49 @@ import { services } from "@/app/lib/data/services";
 import { CheckCircle, Clock } from "lucide-react";
 import { DifferencesProps } from "@/app/components/Differences";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Ortodonzia Foggia | Apparecchi Dentali e Allineatori Invisibili - Studio Fanelli",
+    description:
+        "Ortodonzia a Foggia per bambini e adulti. Apparecchi fissi, mobili e allineatori trasparenti per correggere malocclusioni e affollamento dentale. Piano di trattamento personalizzato.",
+    keywords:
+        "ortodonzia foggia, apparecchi dentali foggia, allineatori invisibili foggia, malocclusione foggia, ortodonzia bambini foggia, dentista foggia, ortodonzia adulti foggia",
+    openGraph: {
+        title: "Ortodonzia Foggia | Apparecchi Dentali e Allineatori Invisibili - Studio Fanelli",
+        description:
+            "Ortodonzia a Foggia per tutte le età. Apparecchi fissi, mobili e allineatori trasparenti per un sorriso allineato e armonioso.",
+        url: "https://studiodentisticofanelli.it/services/ortodonzia",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Studio Dentistico Fanelli - Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Ortodonzia Foggia | Apparecchi Dentali - Studio Fanelli",
+        description:
+            "Ortodonzia a Foggia per bambini e adulti. Prenota la tua visita ortodontica personalizzata.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical: "https://studiodentisticofanelli.it/services/ortodonzia",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
+
 const page = () => {
     const service = services.filter(s => s.slug === "ortodonzia")[0];
 

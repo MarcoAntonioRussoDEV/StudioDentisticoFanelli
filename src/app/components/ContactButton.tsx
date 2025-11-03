@@ -7,6 +7,17 @@ import { openPhone } from "../lib/utils";
 import { Phone, Mail } from "lucide-react";
 import { contacts } from "../lib/data/contacts";
 
+// Dichiarazione TypeScript per gtag
+declare global {
+    interface Window {
+        gtag?: (
+            command: string,
+            eventName: string,
+            params?: Record<string, string | number | boolean>
+        ) => void;
+    }
+}
+
 interface ContactButtonProps
     extends Omit<ComponentProps<typeof Button>, "onClick"> {
     action: "phone" | "form";
@@ -26,7 +37,26 @@ const ContactButton = ({
     const phoneNumber =
         contacts.find(contact => contact.icon === Phone)?.value || "0881635896";
 
+    // Funzione helper per tracciare eventi GA4
+    const trackEvent = (
+        eventName: string,
+        params?: Record<string, string | number | boolean>
+    ) => {
+        if (typeof window !== "undefined" && window.gtag) {
+            window.gtag("event", eventName, {
+                ...params,
+                page_location: window.location.href,
+                page_title: document.title,
+            });
+        }
+    };
+
     const navigateToContactForm = () => {
+        // Track evento "visualizza form contatti"
+        trackEvent("view_contact_form", {
+            button_location: window.location.pathname,
+        });
+
         // Se siamo già sulla homepage, scrolla con offset per la navbar
         if (window.location.pathname === "/") {
             const element = document.getElementById("contact-form");
@@ -49,6 +79,13 @@ const ContactButton = ({
 
     const handleClick = () => {
         if (action === "phone") {
+            // Track chiamata telefonica
+            trackEvent("click_to_call", {
+                phone_number: phoneNumber,
+                button_location: window.location.pathname,
+                button_text:
+                    typeof children === "string" ? children : "Chiama Ora",
+            });
             openPhone();
         } else {
             navigateToContactForm();

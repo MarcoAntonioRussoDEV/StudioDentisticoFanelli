@@ -111,8 +111,15 @@ const Footer = () => {
             </article>
             <div className="container mx-auto border-b  border-white my-8"></div>
             <p className="text-center text-sm text-gray-400 mt-8">
-                &copy; {new Date().getFullYear()} Marco Antonio Russo. Tutti i
-                diritti riservati.
+                &copy; {new Date().getFullYear()}{" "}
+                <Link
+                    href="https://www.linkedin.com/in/marco-antonio-russo/"
+                    className="underline hover:text-primary"
+                    target="_blank"
+                >
+                    Marco Antonio Russo
+                </Link>
+                . Tutti i diritti riservati.
             </p>
         </footer>
     );

@@ -6,6 +6,49 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Annachiara - Assistente Odontoiatrica ASO | Studio Dentistico Fanelli Foggia",
+    description:
+        "Annachiara, assistente di studio odontoiatrico qualificata (ASO) presso Studio Dentistico Fanelli a Foggia. Specializzata in assistenza pediatrica e gestione del paziente.",
+    keywords:
+        "assistente odontoiatrica foggia, ASO foggia, studio dentistico fanelli foggia, dentista foggia, assistente dentale foggia",
+    openGraph: {
+        title: "Annachiara - Assistente Odontoiatrica | Studio Fanelli Foggia",
+        description:
+            "Assistente odontoiatrica qualificata (ASO) presso Studio Dentistico Fanelli. Specializzata in assistenza pediatrica.",
+        url: "https://studiodentisticofanelli.it/staff/annachiara",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Annachiara - Studio Dentistico Fanelli Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "profile",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Annachiara - Assistente Odontoiatrica | Studio Fanelli",
+        description:
+            "Assistente odontoiatrica qualificata (ASO) presso Studio Dentistico Fanelli a Foggia.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical: "https://studiodentisticofanelli.it/staff/annachiara",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
+
 const page = () => {
     const member = team.find(m => m.slug === "annachiara");
     if (!member) {
@@ -30,7 +73,7 @@ const page = () => {
                     <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
                         <Image
                             src={member.image}
-                            alt={member.name}
+                            alt={`${member.name} - Assistente Odontoiatrica ASO specializzata pediatrica presso Studio Dentistico Fanelli Foggia`}
                             fill
                             className="object-cover"
                         />

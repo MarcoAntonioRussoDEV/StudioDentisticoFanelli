@@ -73,7 +73,7 @@ const AboutUs = () => {
                             >
                                 <Image
                                     src={member.image}
-                                    alt={member.name}
+                                    alt={`${member.name} - Team Studio Dentistico Fanelli Foggia`}
                                     width={600}
                                     height={400}
                                     className="xl:mt-24 rounded-full grayscale hover:grayscale-0 transition-all duration-150"

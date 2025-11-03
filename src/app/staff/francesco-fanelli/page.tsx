@@ -15,6 +15,49 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Dott. Francesco Fanelli - Dentista Foggia | Studio Dentistico Fanelli",
+    description:
+        "Dott. Francesco Fanelli, odontoiatra e chirurgo orale a Foggia. Master e Specializzazione in Chirurgia Orale. Esperienza internazionale in implantologia e chirurgia avanzata.",
+    keywords:
+        "francesco fanelli dentista foggia, chirurgo orale foggia, chirurgia orale foggia, odontoiatra foggia, dentista foggia, implantologia foggia",
+    openGraph: {
+        title: "Dott. Francesco Fanelli - Dentista Foggia | Chirurgia Orale",
+        description:
+            "Odontoiatra e chirurgo orale presso Studio Dentistico Fanelli. Specializzato in chirurgia orale e implantologia avanzata.",
+        url: "https://studiodentisticofanelli.it/staff/francesco-fanelli",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Dott. Francesco Fanelli - Studio Dentistico Fanelli Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "profile",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Dott. Francesco Fanelli - Dentista Foggia",
+        description:
+            "Odontoiatra e chirurgo orale a Foggia. Prenota una consulenza.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical: "https://studiodentisticofanelli.it/staff/francesco-fanelli",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
+
 const page = () => {
     const member = team.find(m => m.slug === "francesco-fanelli");
     if (!member) {
@@ -80,7 +123,7 @@ const page = () => {
                     <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
                         <Image
                             src={member.image}
-                            alt={member.name}
+                            alt={`${member.name} - Odontoiatra e Chirurgo Orale presso Studio Dentistico Fanelli Foggia`}
                             fill
                             className="object-cover"
                         />

@@ -3,6 +3,48 @@ import Carousel from "@/app/components/Carousel";
 import IconBox from "@/app/components/IconBox";
 import { services } from "@/app/lib/data/services";
 import { CheckCircle, Clock } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Trattamenti Laser Odontoiatria Foggia | Studio Dentistico Fanelli",
+    description:
+        "Trattamenti dentali con tecnologia laser avanzata a Foggia. Cure minimamente invasive, rapide e indolori presso lo Studio Dentistico Fanelli.",
+    keywords:
+        "laser dentale foggia, odontoiatria laser foggia, trattamenti laser denti foggia, dentista laser foggia, cure dentali laser foggia, tecnologia laser foggia",
+    openGraph: {
+        title: "Trattamenti Laser Odontoiatria Foggia | Studio Dentistico Fanelli",
+        description:
+            "Trattamenti dentali con tecnologia laser avanzata a Foggia. Cure minimamente invasive e indolori.",
+        url: "https://studiodentisticofanelli.it/services/laser",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Studio Dentistico Fanelli - Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Trattamenti Laser Odontoiatria Foggia | Studio Fanelli",
+        description:
+            "Trattamenti dentali con tecnologia laser avanzata a Foggia.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical: "https://studiodentisticofanelli.it/services/laser",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
 
 const page = () => {
     const service = services.filter(s => s.slug === "laser")[0];

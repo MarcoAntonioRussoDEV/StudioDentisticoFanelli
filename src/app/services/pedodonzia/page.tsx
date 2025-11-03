@@ -4,6 +4,49 @@ import IconBox from "@/app/components/IconBox";
 import { services } from "@/app/lib/data/services";
 import { CheckCircle, Clock } from "lucide-react";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Pedodonzia Foggia | Dentista per Bambini - Studio Dentistico Fanelli",
+    description:
+        "Pedodonzia a Foggia: cura dei denti dei bambini con approccio delicato. Prevenzione carie, fluoroprofilassi, sigillanti e ortodonzia intercettiva. Ambiente accogliente per i più piccoli.",
+    keywords:
+        "pedodonzia foggia, dentista bambini foggia, odontoiatria pediatrica foggia, carie bambini foggia, sigillanti dentali foggia, dentista foggia, fluoroprofilassi foggia",
+    openGraph: {
+        title: "Pedodonzia Foggia | Dentista per Bambini - Studio Dentistico Fanelli",
+        description:
+            "Cura dei denti dei bambini a Foggia con approccio delicato. Prevenzione, trattamenti e ortodonzia intercettiva in un ambiente accogliente.",
+        url: "https://studiodentisticofanelli.it/services/pedodonzia",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Studio Dentistico Fanelli - Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Pedodonzia Foggia | Dentista per Bambini - Studio Fanelli",
+        description:
+            "Cura dei denti dei bambini a Foggia. Prenota la prima visita in un ambiente accogliente.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical: "https://studiodentisticofanelli.it/services/pedodonzia",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
+
 const page = () => {
     const service = services.filter(s => s.slug === "pedodonzia")[0];
 

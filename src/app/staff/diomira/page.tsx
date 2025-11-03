@@ -6,6 +6,49 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Diomira - Assistente Odontoiatrica Senior ASO | Studio Dentistico Fanelli Foggia",
+    description:
+        "Diomira, assistente di studio odontoiatrico senior qualificata (ASO) presso Studio Dentistico Fanelli a Foggia. Massima esperienza e riferimento clinico dello studio.",
+    keywords:
+        "assistente odontoiatrica foggia, ASO foggia, studio dentistico fanelli foggia, dentista foggia, assistente dentale foggia",
+    openGraph: {
+        title: "Diomira - Assistente Odontoiatrica Senior | Studio Fanelli Foggia",
+        description:
+            "Assistente odontoiatrica senior qualificata (ASO) presso Studio Dentistico Fanelli. Massima esperienza e riferimento clinico.",
+        url: "https://studiodentisticofanelli.it/staff/diomira",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Diomira - Studio Dentistico Fanelli Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "profile",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Diomira - Assistente Odontoiatrica Senior | Studio Fanelli",
+        description:
+            "Assistente odontoiatrica senior qualificata (ASO) presso Studio Dentistico Fanelli a Foggia.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical: "https://studiodentisticofanelli.it/staff/diomira",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
+
 const page = () => {
     const member = team.find(m => m.slug === "diomira");
     if (!member) {
@@ -30,7 +73,7 @@ const page = () => {
                     <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
                         <Image
                             src={member.image}
-                            alt={member.name}
+                            alt={`${member.name} - Assistente Odontoiatrica Senior ASO presso Studio Dentistico Fanelli Foggia`}
                             fill
                             className="object-cover"
                         />

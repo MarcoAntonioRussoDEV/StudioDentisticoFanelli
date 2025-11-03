@@ -11,7 +11,7 @@ const HeroSection = () => {
         <div className="flex min-h-screen flex-col items-center justify-center relative">
             <Image
                 src={withBasePath("/images/hero.jpg")}
-                alt="Studio Dentistico Fanelli immagine header"
+                alt="Studio Dentistico Fanelli - Dentista a Foggia con tecnologie avanzate e team professionale"
                 fill
                 priority
                 className="object-cover"
@@ -21,7 +21,7 @@ const HeroSection = () => {
                     <div className="flex items-center gap-4">
                         <Image
                             src={withBasePath("/images/logo-bianco.svg")}
-                            alt="Studio Dentistico Fanelli immagine header"
+                            alt="Logo Studio Dentistico Fanelli bianco - Dentista Foggia"
                             width={0}
                             height={0}
                             style={{ height: "auto", width: "160px" }}

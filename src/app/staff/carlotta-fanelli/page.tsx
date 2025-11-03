@@ -14,6 +14,49 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Dott.ssa Carlotta Fanelli - Dentista Foggia | Studio Dentistico Fanelli",
+    description:
+        "Dott.ssa Carlotta Fanelli, odontoiatra specializzata in ortognatodonzia e pedodonzia a Foggia. Esperta in ortodonzia per bambini e adulti, cura dei denti dei più piccoli.",
+    keywords:
+        "carlotta fanelli dentista foggia, ortodonzia foggia, pedodonzia foggia, ortodonzia bambini foggia, dentista bambini foggia, dentista foggia",
+    openGraph: {
+        title: "Dott.ssa Carlotta Fanelli - Dentista Foggia | Ortodonzia",
+        description:
+            "Odontoiatra specializzata in ortognatodonzia e pedodonzia presso Studio Dentistico Fanelli. Esperta in ortodonzia e cura dei denti dei bambini.",
+        url: "https://studiodentisticofanelli.it/staff/carlotta-fanelli",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Dott.ssa Carlotta Fanelli - Studio Dentistico Fanelli Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "profile",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Dott.ssa Carlotta Fanelli - Dentista Foggia",
+        description:
+            "Odontoiatra specializzata in ortodonzia e pedodonzia a Foggia. Prenota una consulenza.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical: "https://studiodentisticofanelli.it/staff/carlotta-fanelli",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
+
 const page = () => {
     const member = team.find(m => m.slug === "carlotta-fanelli");
     if (!member) {
@@ -84,7 +127,7 @@ const page = () => {
                     <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
                         <Image
                             src={member.image}
-                            alt={member.name}
+                            alt={`${member.name} - Odontoiatra specializzata in Ortodonzia e Pedodonzia presso Studio Dentistico Fanelli Foggia`}
                             fill
                             className="object-cover"
                         />

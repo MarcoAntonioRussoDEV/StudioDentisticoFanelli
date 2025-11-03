@@ -4,6 +4,49 @@ import IconBox from "@/app/components/IconBox";
 import { services } from "@/app/lib/data/services";
 import { CheckCircle, Clock } from "lucide-react";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Parodontologia Foggia | Cura Gengive e Parodontite - Studio Fanelli",
+    description:
+        "Parodontologia a Foggia: cura e prevenzione della parodontite. Terapia laser, chirurgia rigenerativa e mantenimento parodontale. Proteggi gengive e tessuti di supporto dei denti.",
+    keywords:
+        "parodontologia foggia, parodontite foggia, cura gengive foggia, piorrea foggia, laser parodontale foggia, dentista foggia, malattia parodontale foggia",
+    openGraph: {
+        title: "Parodontologia Foggia | Cura Gengive e Parodontite - Studio Fanelli",
+        description:
+            "Cura della parodontite a Foggia con terapia laser e chirurgia rigenerativa. Proteggi la salute delle tue gengive con trattamenti personalizzati.",
+        url: "https://studiodentisticofanelli.it/services/parodontologia",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Studio Dentistico Fanelli - Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Parodontologia Foggia | Cura Gengive - Studio Fanelli",
+        description:
+            "Cura della parodontite a Foggia. Prenota la tua visita parodontale personalizzata.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical: "https://studiodentisticofanelli.it/services/parodontologia",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
+
 const page = () => {
     const service = services.filter(s => s.slug === "parodontologia")[0];
 

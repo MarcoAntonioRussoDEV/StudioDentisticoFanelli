@@ -6,6 +6,49 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Monica - Responsabile Amministrativa | Studio Dentistico Fanelli Foggia",
+    description:
+        "Monica, responsabile amministrativa dello Studio Dentistico Fanelli a Foggia. Gestione appuntamenti, accoglienza pazienti e coordinamento amministrativo.",
+    keywords:
+        "studio dentistico fanelli foggia, dentista foggia, responsabile amministrativa, team studio dentistico foggia",
+    openGraph: {
+        title: "Monica - Responsabile Amministrativa | Studio Fanelli Foggia",
+        description:
+            "Responsabile amministrativa presso Studio Dentistico Fanelli. Gestione accoglienza pazienti e coordinamento amministrativo.",
+        url: "https://studiodentisticofanelli.it/staff/monica",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Monica - Studio Dentistico Fanelli Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "profile",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Monica - Responsabile Amministrativa | Studio Fanelli",
+        description:
+            "Responsabile amministrativa presso Studio Dentistico Fanelli a Foggia.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical: "https://studiodentisticofanelli.it/staff/monica",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
+
 const page = () => {
     const member = team.find(m => m.slug === "monica");
     if (!member) {
@@ -30,7 +73,7 @@ const page = () => {
                     <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
                         <Image
                             src={member.image}
-                            alt={member.name}
+                            alt={`${member.name} - Responsabile Amministrativa Studio Dentistico Fanelli Foggia`}
                             fill
                             className="object-cover"
                         />

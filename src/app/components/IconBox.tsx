@@ -19,9 +19,9 @@ const IconBox = ({ Icon, iconSrc, className }: IconBoxProps) => {
                 <Image
                     src={iconSrc}
                     alt="Service icon"
-                    width={56}
-                    height={56}
-                    className="brightness-0 invert w-20 h-20 object-contain"
+                    width={40}
+                    height={40}
+                    className="brightness-0 invert w-16 h-16 object-contain"
                 />
             ) : Icon ? (
                 <Icon

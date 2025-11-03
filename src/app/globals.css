@@ -129,6 +129,21 @@ body {
     overflow: hidden !important;
 }
 
+/* SVG Color Filter - Per Next.js Image component */
+.filter-primary {
+    filter: invert(31%) sepia(94%) saturate(1234%) hue-rotate(168deg)
+        brightness(93%) contrast(93%);
+}
+
+.filter-accent {
+    filter: invert(77%) sepia(71%) saturate(773%) hue-rotate(358deg)
+        brightness(103%) contrast(101%);
+}
+
+.filter-white {
+    filter: brightness(0) invert(1);
+}
+
 /* Carousel */
 
 .swiper {

@@ -20,7 +20,7 @@ const Differences = ({ before, after }: DifferencesProps) => {
                 <Image
                     width={100}
                     height={100}
-                    alt="daisy"
+                    alt="Caso prima del trattamento - Studio Dentistico Fanelli Foggia"
                     src={before}
                 />
             </div>
@@ -31,7 +31,7 @@ const Differences = ({ before, after }: DifferencesProps) => {
                 <Image
                     width={100}
                     height={100}
-                    alt="daisy"
+                    alt="Caso dopo il trattamento - Studio Dentistico Fanelli Foggia"
                     src={after}
                 />
             </div>

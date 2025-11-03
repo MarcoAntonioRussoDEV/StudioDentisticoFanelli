@@ -6,6 +6,49 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Chiara - Assistente Odontoiatrica ASO | Studio Dentistico Fanelli Foggia",
+    description:
+        "Chiara, assistente di studio odontoiatrico qualificata (ASO) presso Studio Dentistico Fanelli a Foggia. Esperta in protocolli clinici e pianificazione delle procedure.",
+    keywords:
+        "assistente odontoiatrica foggia, ASO foggia, studio dentistico fanelli foggia, dentista foggia, assistente dentale foggia",
+    openGraph: {
+        title: "Chiara - Assistente Odontoiatrica | Studio Fanelli Foggia",
+        description:
+            "Assistente odontoiatrica qualificata (ASO) presso Studio Dentistico Fanelli. Esperta in protocolli clinici e pianificazione.",
+        url: "https://studiodentisticofanelli.it/staff/chiara",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Chiara - Studio Dentistico Fanelli Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "profile",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Chiara - Assistente Odontoiatrica | Studio Fanelli",
+        description:
+            "Assistente odontoiatrica qualificata (ASO) presso Studio Dentistico Fanelli a Foggia.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical: "https://studiodentisticofanelli.it/staff/chiara",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
+
 const page = () => {
     const member = team.find(m => m.slug === "chiara");
     if (!member) {
@@ -30,7 +73,7 @@ const page = () => {
                     <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
                         <Image
                             src={member.image}
-                            alt={member.name}
+                            alt={`${member.name} - Assistente Odontoiatrica ASO presso Studio Dentistico Fanelli Foggia`}
                             fill
                             className="object-cover"
                         />

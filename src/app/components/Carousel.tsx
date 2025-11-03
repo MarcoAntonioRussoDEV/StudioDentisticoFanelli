@@ -7,12 +7,14 @@ interface CarouselProps {
     images?: string[];
     differencesMap?: DifferencesProps[];
     isDiff?: boolean;
+    serviceName?: string;
 }
 
 const Carousel = ({
     images,
     differencesMap,
     isDiff = false,
+    serviceName = "servizio odontoiatrico",
 }: CarouselProps) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
@@ -66,7 +68,9 @@ const Carousel = ({
                               fill
                               src={image}
                               className="object-cover"
-                              alt={`Slide ${index + 1}`}
+                              alt={`${serviceName} - Caso clinico ${
+                                  index + 1
+                              } Studio Dentistico Fanelli Foggia`}
                               priority={index === 0} // Priorità alla prima immagine
                           />
                       </div>

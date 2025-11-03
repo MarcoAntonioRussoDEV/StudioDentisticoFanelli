@@ -4,6 +4,48 @@ import IconBox from "@/app/components/IconBox";
 import { services } from "@/app/lib/data/services";
 import { CheckCircle, Clock } from "lucide-react";
 import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Endodonzia e Devitalizzazione Foggia | Studio Dentistico Fanelli",
+    description:
+        "Trattamenti endodontici e devitalizzazioni a Foggia. Elimina il dolore e salva il dente con tecnologie avanzate. Ritrattamenti canalari presso Studio Fanelli.",
+    keywords:
+        "endodonzia foggia, devitalizzazione foggia, cura canalare foggia, ritrattamento endodontico foggia, dentista foggia, pulpite foggia, granuloma foggia",
+    openGraph: {
+        title: "Endodonzia e Devitalizzazione Foggia | Studio Dentistico Fanelli",
+        description:
+            "Trattamenti endodontici a Foggia. Elimina il dolore e salva il dente con tecnologie avanzate.",
+        url: "https://studiodentisticofanelli.it/services/endodonzia",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Studio Dentistico Fanelli - Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Endodonzia e Devitalizzazione Foggia | Studio Fanelli",
+        description:
+            "Trattamenti endodontici a Foggia. Elimina il dolore e salva il dente.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical: "https://studiodentisticofanelli.it/services/endodonzia",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
 
 const page = () => {
     const service = services.filter(s => s.slug === "endodonzia")[0];

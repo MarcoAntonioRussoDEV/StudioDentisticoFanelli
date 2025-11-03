@@ -3,9 +3,55 @@ import Carousel from "@/app/components/Carousel";
 import IconBox from "@/app/components/IconBox";
 import { services } from "@/app/lib/data/services";
 import { CheckCircle, Clock } from "lucide-react";
+import { getServiceSchema } from "@/app/lib/schema/service";
+
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Igiene e Prevenzione Dentale Foggia | Studio Dentistico Fanelli",
+    description:
+        "Igiene dentale professionale e prevenzione a Foggia. Pulizia dei denti, detartrasi, fluoroprofilassi e controlli periodici. Prenota la tua seduta presso lo Studio Fanelli.",
+    keywords:
+        "igiene dentale foggia, pulizia denti foggia, detartrasi foggia, prevenzione dentale foggia, dentista foggia, igienista dentale foggia, ablazione tartaro foggia",
+    openGraph: {
+        title: "Igiene e Prevenzione Dentale Foggia | Studio Dentistico Fanelli",
+        description:
+            "Igiene dentale professionale e prevenzione a Foggia. Pulizia dei denti e controlli periodici per la salute del tuo sorriso.",
+        url: "https://studiodentisticofanelli.it/services/igiene-e-prevenzione",
+        siteName: "Studio Dentistico Fanelli",
+        images: [
+            {
+                url: "https://studiodentisticofanelli.it/images/open-graph.png",
+                width: 1200,
+                height: 630,
+                alt: "Studio Dentistico Fanelli - Foggia",
+            },
+        ],
+        locale: "it_IT",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Igiene e Prevenzione Dentale Foggia | Studio Fanelli",
+        description:
+            "Igiene dentale professionale a Foggia. Prenota la tua seduta di pulizia.",
+        images: ["https://studiodentisticofanelli.it/images/open-graph.png"],
+    },
+    alternates: {
+        canonical:
+            "https://studiodentisticofanelli.it/services/igiene-e-prevenzione",
+    },
+    authors: [
+        {
+            name: "Marco Antonio Russo",
+            url: "https://www.linkedin.com/in/marco-antonio-russo/",
+        },
+    ],
+};
 
 const page = () => {
     const service = services.filter(s => s.slug === "igiene-e-prevenzione")[0];
+    const serviceSchema = getServiceSchema(service);
 
     const benefits = [
         "Prevenzione di carie e malattie gengivali e parodontali",
@@ -43,6 +89,14 @@ const page = () => {
 
     return (
         <div className="bg-linear-to-b from-primary-100 to-primary-200">
+            {/* Structured Data - Service Schema */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(serviceSchema),
+                }}
+            />
+
             <article className="container mx-auto py-36 px-4">
                 <header className="flex flex-col lg:flex-row justify-between w-full min-h-96 gap-8">
                     <section className="flex flex-col items-start justify-start gap-16 w-full">
@@ -54,7 +108,10 @@ const page = () => {
                         </div>
                         <p className="text-2xl">{service.description}</p>
                     </section>
-                    <Carousel images={service.images as string[]} />
+                    <Carousel
+                        images={service.images as string[]}
+                        serviceName="Igiene e Prevenzione Dentale"
+                    />
                 </header>
             </article>
 

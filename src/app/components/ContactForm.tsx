@@ -5,15 +5,46 @@ import Button from "./Button";
 import emailjs from "@emailjs/browser";
 import { Mail, Phone, User, MessageSquare } from "lucide-react";
 
+// Dichiarazione TypeScript per gtag
+declare global {
+    interface Window {
+        gtag?: (
+            command: string,
+            eventName: string,
+            params?: Record<string, string | number | boolean>
+        ) => void;
+    }
+}
+
 const ContactForm = () => {
     const form = useRef<HTMLFormElement>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Funzione helper per tracciare eventi GA4
+    const trackEvent = (
+        eventName: string,
+        params?: Record<string, string | number | boolean>
+    ) => {
+        if (typeof window !== "undefined" && window.gtag) {
+            window.gtag("event", eventName, {
+                ...params,
+                page_location: window.location.href,
+                page_title: document.title,
+            });
+        }
+    };
 
     const sendEmail = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!form.current) return;
 
         setIsSubmitting(true);
+
+        // Track inizio invio form
+        trackEvent("form_submit_start", {
+            form_type: "contact_form",
+            form_location: window.location.pathname,
+        });
 
         emailjs
             .sendForm(
@@ -27,6 +58,14 @@ const ContactForm = () => {
             .then(
                 result => {
                     console.log(result.text);
+
+                    // Track successo invio form (CONVERSIONE!)
+                    trackEvent("form_submit_success", {
+                        form_type: "contact_form",
+                        form_location: window.location.pathname,
+                        value: 1, // Valore della conversione
+                    });
+
                     alert(
                         "Messaggio inviato con successo! Ti contatteremo presto."
                     );
@@ -34,6 +73,14 @@ const ContactForm = () => {
                 },
                 error => {
                     console.error(error);
+
+                    // Track errore invio form
+                    trackEvent("form_submit_error", {
+                        form_type: "contact_form",
+                        form_location: window.location.pathname,
+                        error_message: error.text || "Unknown error",
+                    });
+
                     alert("Si è verificato un errore. Riprova più tardi.");
                 }
             )

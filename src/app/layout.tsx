@@ -6,6 +6,8 @@ import AOSProvider from "./components/AOSProvider";
 import Footer from "./components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Cta from "./components/cta";
+import { localBusinessSchema } from "./lib/schema/localBusiness";
+import { medicalBusinessSchema } from "./lib/schema/medicalBusiness";
 
 const font = Open_Sans({
     weight: ["400", "700"],
@@ -38,6 +40,27 @@ export default function RootLayout({
             lang="it"
             className={`${font.variable}`}
         >
+            <head>
+                {/* Google Search Console */}
+                <meta
+                    name="google-site-verification"
+                    content="RmDtPytjqD76ejsKG28L0KtFefVxjQceyq5cIid1heM"
+                />
+                {/* Structured Data - Local Business */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(localBusinessSchema),
+                    }}
+                />
+                {/* Structured Data - Medical Business */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(medicalBusinessSchema),
+                    }}
+                />
+            </head>
             <body className={`${font.variable}`}>
                 <AOSProvider />
                 <Navbar />
