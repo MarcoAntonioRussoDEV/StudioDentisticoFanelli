@@ -31,10 +31,7 @@ const ChairSideSection = () => {
         },
     ];
     return (
-        <article
-            className="py-16"
-            id="services"
-        >
+        <article className="py-16">
             <div className="container px-4 mx-auto flex flex-col gap-16 items-center">
                 <div className="flex flex-col gap-4 items-center">
                     <h2 className="text-4xl font-bold text-center">

@@ -346,7 +346,7 @@ const page = () => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <ContactButton
                             action="phone"
-                            className="bg-white text-primary"
+                            variant="light"
                         >
                             Prenota una visita
                         </ContactButton>

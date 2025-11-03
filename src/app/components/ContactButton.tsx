@@ -27,13 +27,18 @@ const ContactButton = ({
         contacts.find(contact => contact.icon === Phone)?.value || "0881635896";
 
     const navigateToContactForm = () => {
-        // Se siamo già sulla homepage, scrolla
+        // Se siamo già sulla homepage, scrolla con offset per la navbar
         if (window.location.pathname === "/") {
             const element = document.getElementById("contact-form");
             if (element) {
-                element.scrollIntoView({
+                const navbarHeight = 80; // Altezza approssimativa della navbar
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition =
+                    elementPosition + window.pageYOffset - navbarHeight;
+
+                window.scrollTo({
+                    top: offsetPosition,
                     behavior: "smooth",
-                    block: "start",
                 });
             }
         } else {

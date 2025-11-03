@@ -2,7 +2,6 @@ import React from "react";
 import IconBox from "./IconBox";
 import { Service } from "../lib/data/services";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 
 const ServicesCard: React.FC<{ service: Service }> = ({ service }) => {
     return (
@@ -17,7 +16,7 @@ const ServicesCard: React.FC<{ service: Service }> = ({ service }) => {
             >
                 <div className="flex gap-4 justify-between items-end w-full">
                     <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                    <IconBox Icon={service.Icon} />
+                    <IconBox iconSrc={service.icon} />
                 </div>
                 <p className="text-gray-600">{service.description}</p>
             </div>

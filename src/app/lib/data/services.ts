@@ -1,18 +1,10 @@
 import { DifferencesProps } from "@/app/components/Differences";
 import { withBasePath } from "../basePath";
-import {
-    Smile,
-    Wrench,
-    Shield,
-    Stethoscope,
-    Baby,
-    LucideIcon,
-} from "lucide-react";
 
 export interface Service {
     title: string;
     description: string;
-    Icon: LucideIcon;
+    icon: string; // Path all'icona SVG
     url: string;
     slug: string;
     images: string[] | DifferencesProps[];
@@ -38,7 +30,7 @@ export const services: Service[] = [
         title: "Igiene e Prevenzione",
         description:
             "Mantenimento della salute orale attraverso pulizia professionale, fluoroprofilassi e controlli regolari",
-        Icon: Smile,
+        icon: withBasePath("/images/icons/igiene-e-prevenzione.svg"),
         url: "/services/igiene-e-prevenzione",
         slug: "igiene-e-prevenzione",
         images: [
@@ -51,7 +43,7 @@ export const services: Service[] = [
         title: "Protesi Dentale",
         description:
             "Protesi dentali fisse e mobili per ripristinare funzionalità ed estetica",
-        Icon: Wrench,
+        icon: withBasePath("/images/icons/protesi-dentale.svg"),
         url: "/services/protesi-dentale",
         slug: "protesi-dentale",
         images: getDiffImages("protesi-dentale", 3),
@@ -60,7 +52,7 @@ export const services: Service[] = [
         title: "Impiantologia",
         description:
             "Ripristino dei denti mancanti con impianti dentali sicuri e duraturi",
-        Icon: Wrench,
+        icon: withBasePath("/images/icons/implantologia.svg"),
         url: "/services/impiantologia",
         slug: "impiantologia",
         images: getServiceImages("impiantologia", 6),
@@ -69,7 +61,7 @@ export const services: Service[] = [
         title: "Parodontologia",
         description:
             "Prevenzione e cura delle gengive e del tessuto di supporto dei denti",
-        Icon: Wrench,
+        icon: withBasePath("/images/icons/parodontologia.svg"),
         url: "/services/parodontologia",
         slug: "parodontologia",
         images: [
@@ -81,7 +73,7 @@ export const services: Service[] = [
     {
         title: "Ortodonzia",
         description: "Allineamento e salute del sorriso",
-        Icon: Wrench,
+        icon: withBasePath("/images/icons/ortodonzia.svg"),
         url: "/services/ortodonzia",
         slug: "ortodonzia",
         images: [
@@ -93,7 +85,7 @@ export const services: Service[] = [
     {
         title: "Pedodonzia",
         description: "Cura e prevenzione dei denti dei più piccoli",
-        Icon: Baby,
+        icon: withBasePath("/images/icons/pedodonzia.svg"),
         url: "/services/pedodonzia",
         slug: "pedodonzia",
         images: [
@@ -106,7 +98,7 @@ export const services: Service[] = [
         title: "Conservativa",
         description:
             "Trattamento della carie e restauri estetici preservando forma, funzione ed estetica",
-        Icon: Shield,
+        icon: withBasePath("/images/icons/conservativa.svg"),
         url: "/services/conservativa",
         slug: "conservativa",
         images: [
@@ -117,10 +109,22 @@ export const services: Service[] = [
     },
     {
         title: "Endodonzia",
-        description: "Trattamento e ritrattamento endodontico",
-        Icon: Stethoscope,
+        description: "Devitalizzazioni e trattamenti canalari",
+        icon: withBasePath("/images/icons/endodonzia.svg"),
         url: "/services/endodonzia",
         slug: "endodonzia",
+        images: [
+            "https://picsum.photos/200/300",
+            "https://picsum.photos/201/300",
+            "https://picsum.photos/202/300",
+        ],
+    },
+    {
+        title: "Laser",
+        description: "Trattamenti dentali con tecnologia laser avanzata",
+        icon: withBasePath("/images/icons/laser.svg"),
+        url: "/services/laser",
+        slug: "laser",
         images: [
             "https://picsum.photos/200/300",
             "https://picsum.photos/201/300",

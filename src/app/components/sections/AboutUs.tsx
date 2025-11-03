@@ -7,6 +7,7 @@ import IconBox from "../IconBox";
 import { aboutStats } from "@/app/lib/data/aboutStats";
 import { team } from "@/app/lib/data/team";
 import "keen-slider/keen-slider.min.css";
+import Carousel2 from "../Carousel2";
 
 function useResponsivePerView() {
     const [perView, setPerView] = useState(2.5);
@@ -60,7 +61,7 @@ const AboutUs = () => {
                     </div>
 
                     {/* Carousel */}
-                    <div
+                    {/* <div
                         ref={ref}
                         className="keen-slider"
                     >
@@ -82,8 +83,9 @@ const AboutUs = () => {
                                 </h4>
                             </Link>
                         ))}
-                    </div>
+                    </div> */}
                 </section>
+                <Carousel2 />
             </article>
             <article className="container px-4 mx-auto py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

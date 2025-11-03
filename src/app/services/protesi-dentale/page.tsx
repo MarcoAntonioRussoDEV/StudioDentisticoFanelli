@@ -3,7 +3,6 @@ import Carousel from "@/app/components/Carousel";
 import IconBox from "@/app/components/IconBox";
 import { services } from "@/app/lib/data/services";
 import { CheckCircle, Clock } from "lucide-react";
-import Image from "next/image";
 import { DifferencesProps } from "@/app/components/Differences";
 
 const page = () => {
@@ -141,7 +140,7 @@ const page = () => {
                 <header className="flex flex-col lg:flex-row justify-between w-full min-h-96 gap-8">
                     <section className="flex flex-col items-start justify-start gap-16 w-full">
                         <div className="flex flex-col lg:flex-row items-center gap-4 w-full">
-                            <IconBox Icon={service.Icon} />
+                            <IconBox iconSrc={service.icon} />
                             <h1 className="text-6xl font-bold">
                                 {service.title}
                             </h1>

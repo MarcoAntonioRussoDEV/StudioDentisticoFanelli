@@ -25,9 +25,10 @@ const HeroSection = () => {
                             width={160}
                             height={160}
                             className="hidden lg:inline-block"
+                            priority={true}
                         />
-                        <h1 className="max-w-1/2 text-7xl">
-                            Studio Dentistico <strong>Fanelli</strong>
+                        <h1 className="max-w-2/3 text-7xl lg:text-8xl">
+                            Studio Dentistico Fanelli
                         </h1>
                     </div>
                     <p className="max-w-2/3 mt-4 text-2xl font-normal">

@@ -43,7 +43,10 @@ const ContactForm = () => {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+        <div
+            className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+            id="contacts"
+        >
             <div className="mb-8">
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
                     Inviaci un Messaggio

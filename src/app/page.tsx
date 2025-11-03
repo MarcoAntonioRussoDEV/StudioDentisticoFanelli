@@ -15,17 +15,13 @@ export default function Home() {
             {/* Sezione ChairSide*/}
             <ChairSideSection />
 
+            {/* Sezione Chi siamo */}
+            <AboutUs />
             {/* Sezione Servizi*/}
             <ServicesSection />
 
-            {/* Sezione Chi siamo */}
-            <AboutUs />
-
             {/* Sezione Contatti */}
-            <article
-                className="py-16"
-                id="contacts"
-            >
+            <article className="py-16">
                 <div className="container px-4 mx-auto flex flex-col gap-8 items-center">
                     <h2 className="text-6xl font-bold text-center">
                         Contattaci
@@ -43,65 +39,6 @@ export default function Home() {
                     </div>
                 </div>
             </article>
-            {/* Schema Markup per Local Business */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "DentalClinic",
-                        name: "Studio Dentistico Fanelli",
-                        image: "https://www.studiodentisticofanelli.it/logo.jpg",
-                        description:
-                            "Studio dentistico a Foggia specializzato in implantologia, ortodonzia e cure dentali professionali. Esperienza dal 1985.",
-                        address: {
-                            "@type": "PostalAddress",
-                            streetAddress: "Via Roma 123",
-                            addressLocality: "Foggia",
-                            addressRegion: "Puglia",
-                            postalCode: "71100",
-                            addressCountry: "IT",
-                        },
-                        geo: {
-                            "@type": "GeoCoordinates",
-                            latitude: 41.4621,
-                            longitude: 15.5444,
-                        },
-                        telephone: "+390881234567",
-                        url: "https://www.studiodentisticofanelli.it",
-                        email: "info@studiodentisticofanelli.it",
-                        priceRange: "€€",
-                        openingHoursSpecification: [
-                            {
-                                "@type": "OpeningHoursSpecification",
-                                dayOfWeek: [
-                                    "Monday",
-                                    "Tuesday",
-                                    "Wednesday",
-                                    "Thursday",
-                                    "Friday",
-                                ],
-                                opens: "09:00",
-                                closes: "18:00",
-                            },
-                        ],
-                        sameAs: [
-                            "https://www.facebook.com/studiodentisticofanelli",
-                            "https://www.instagram.com/studiodentisticofanelli",
-                        ],
-                        medicalSpecialty: [
-                            "Dentistry",
-                            "Oral Surgery",
-                            "Orthodontics",
-                            "Dental Implants",
-                        ],
-                        areaServed: {
-                            "@type": "City",
-                            name: "Foggia",
-                        },
-                    }),
-                }}
-            />
         </div>
     );
 }

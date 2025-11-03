@@ -1,22 +1,32 @@
-import { LucideIcon, LucideProps } from "lucide-react";
-import React, { ForwardRefExoticComponent, RefAttributes } from "react";
-import { DynamicIcon } from "lucide-react/dynamic";
+import { LucideIcon } from "lucide-react";
+import React from "react";
+import Image from "next/image";
 
-const IconBox = ({
-    Icon,
-    className,
-}: {
-    Icon: LucideIcon;
+interface IconBoxProps {
+    Icon?: LucideIcon;
+    iconSrc?: string;
     className?: string;
-}) => {
+}
+
+const IconBox = ({ Icon, iconSrc, className }: IconBoxProps) => {
     return (
         <div
-            className={`p-4 bg-gradient-to-br from-primary-800 to-primary-500 rounded-3xl ${className}`}
+            className={`p-1 bg-gradient-to-br from-primary-800 to-primary-500 rounded-3xl ${className}`}
         >
-            <Icon
-                size={40}
-                className="text-white"
-            />
+            {iconSrc ? (
+                <Image
+                    src={iconSrc}
+                    alt="Service icon"
+                    width={1}
+                    height={1}
+                    className="brightness-0 invert w-20 h-20 object-contain"
+                />
+            ) : Icon ? (
+                <Icon
+                    size={40}
+                    className="text-white"
+                />
+            ) : null}
         </div>
     );
 };

@@ -329,8 +329,7 @@ const page = () => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <ContactButton
                             action="phone"
-                            variant="default"
-                            className="bg-white text-primary hover:bg-gray-100"
+                            variant="light"
                         >
                             Prenota una visita
                         </ContactButton>

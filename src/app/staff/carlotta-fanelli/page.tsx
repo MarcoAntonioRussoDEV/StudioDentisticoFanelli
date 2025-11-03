@@ -30,7 +30,7 @@ const page = () => {
         {
             title: "Specializzazione in Ortognatodonzia",
             institution: "Università degli Studi di Foggia",
-            grade: "110/110 con lode",
+            grade: "50/50 con lode",
             type: "Specializzazione",
         },
         {
@@ -428,8 +428,7 @@ const page = () => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <ContactButton
                             action="phone"
-                            variant="default"
-                            className="bg-white text-primary hover:bg-gray-100"
+                            variant="light"
                         >
                             Prenota una visita
                         </ContactButton>

@@ -10,6 +10,8 @@
     --soft: #666565;
     --muted: #d3d4d4;
     scroll-behavior: smooth;
+    scroll-padding-top: 160px;
+    font-family: var(--font-family);
 
     /* @media screen and (min-width: 1200px) {
         font-size: 16px;
@@ -19,8 +21,8 @@
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
+    /* --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono); */
     --color-primary: var(--primary);
     --color-accent: var(--accent);
     --color-muted: var(--muted);
@@ -49,7 +51,7 @@
 body {
     background: var(--background);
     color: var(--foreground);
-    font-family: Roboto, sans-serif;
+    /* font-family: Roboto, sans-serif; */
 }
 
 [class^="number-slide"],
@@ -125,4 +127,28 @@ body {
 }
 .gm-style-iw-d {
     overflow: hidden !important;
+}
+
+/* Carousel */
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

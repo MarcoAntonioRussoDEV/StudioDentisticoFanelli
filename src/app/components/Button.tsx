@@ -13,6 +13,7 @@ const buttonVariants = cva(
                 outline:
                     "border border-primary text-primary hover:bg-primary/10 focus:ring-4 focus:ring-gray-200",
                 accent: "bg-accent text-black hover:bg-accent/80 dark:hover:bg-accent/80 focus:ring-4 focus:ring-accent/50 dark:focus:ring-accent/50",
+                light: "bg-white text-primary hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-white dark:hover:bg-gray-100",
             },
             size: {
                 sm: "px-3 py-1.5 text-sm",
@@ -46,7 +47,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
             glareSize={300}
             transitionDuration={800}
             playOnce={false}
-            className={`inline-block ${fill && "w-full"}`}
+            className={`rounded-lg inline-block ${fill && "w-full"}`}
         >
             <button
                 onClick={onClick}

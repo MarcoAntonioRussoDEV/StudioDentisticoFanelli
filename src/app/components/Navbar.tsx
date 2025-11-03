@@ -8,7 +8,7 @@ import { withBasePath } from "@/app/lib/basePath";
 
 const Navbar = () => {
     return (
-        <nav className="w-full  p-4 sticky top-0 z-1 bg-background shadow-md">
+        <nav className="w-full  p-4 sticky top-0 z-50 bg-background shadow-md">
             <div className="container mx-auto flex items-center justify-between">
                 <Link
                     className="text-lg font-semibold"
