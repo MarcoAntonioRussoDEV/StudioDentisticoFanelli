@@ -52,7 +52,7 @@ export const services: Service[] = [
         title: "Impiantologia",
         description:
             "Ripristino dei denti mancanti con impianti dentali sicuri e duraturi",
-        icon: withBasePath("/images/icons/implantologia.svg"),
+        icon: withBasePath("/images/icons/impiantologia.svg"),
         url: "/services/impiantologia",
         slug: "impiantologia",
         images: getServiceImages("impiantologia", 6),
@@ -76,11 +76,7 @@ export const services: Service[] = [
         icon: withBasePath("/images/icons/ortodonzia.svg"),
         url: "/services/ortodonzia",
         slug: "ortodonzia",
-        images: [
-            "https://picsum.photos/200/300",
-            "https://picsum.photos/201/300",
-            "https://picsum.photos/202/300",
-        ],
+        images: getDiffImages("ortodonzia", 6),
     },
     {
         title: "Pedodonzia",

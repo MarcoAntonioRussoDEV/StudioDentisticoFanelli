@@ -3,6 +3,7 @@ import Carousel from "@/app/components/Carousel";
 import IconBox from "@/app/components/IconBox";
 import { services } from "@/app/lib/data/services";
 import { CheckCircle, Clock } from "lucide-react";
+import { DifferencesProps } from "@/app/components/Differences";
 
 const page = () => {
     const service = services.filter(s => s.slug === "ortodonzia")[0];
@@ -71,7 +72,10 @@ const page = () => {
                             funzionale.
                         </p>
                     </section>
-                    <Carousel images={service.images as string[]} />
+                    <Carousel
+                        differencesMap={service.images as DifferencesProps[]}
+                        isDiff
+                    />{" "}
                 </header>
             </article>
 

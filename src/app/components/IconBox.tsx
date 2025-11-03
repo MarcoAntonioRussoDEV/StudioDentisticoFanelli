@@ -11,14 +11,16 @@ interface IconBoxProps {
 const IconBox = ({ Icon, iconSrc, className }: IconBoxProps) => {
     return (
         <div
-            className={`p-1 bg-gradient-to-br from-primary-800 to-primary-500 rounded-3xl ${className}`}
+            className={`bg-gradient-to-br from-primary-800 to-primary-500 rounded-3xl ${
+                iconSrc ? "p-1" : "p-4"
+            } ${className}`}
         >
             {iconSrc ? (
                 <Image
                     src={iconSrc}
                     alt="Service icon"
-                    width={1}
-                    height={1}
+                    width={56}
+                    height={56}
                     className="brightness-0 invert w-20 h-20 object-contain"
                 />
             ) : Icon ? (
