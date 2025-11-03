@@ -48,10 +48,10 @@ const Carousel2 = () => {
                             alt={member.name}
                             width={600}
                             height={400}
-                            className="xl:mt-24 rounded-full transition-all duration-150 md:grayscale md:hover:grayscale-0"
+                            className="xl:mt-24 transition-all duration-150 md:grayscale md:hover:grayscale-0"
                             priority
                         />
-                        <h4 className="text-white rounded-2xl bg-primary/40 w-full text-center bottom-0 text-lg md:text-2xl px-2 py-1 whitespace-nowrap overflow-hidden text-ellipsis">
+                        <h4 className="text-white rounded-xl bg-primary/40 w-full text-center bottom-0 text-lg md:text-2xl px-2 py-1 whitespace-nowrap overflow-hidden text-ellipsis">
                             {member.name}
                         </h4>
                     </Link>
