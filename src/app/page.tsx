@@ -12,11 +12,11 @@ export default function Home() {
             {/* Hero Section */}
             <HeroSection />
 
+            {/* Sezione Chi siamo */}
+            <AboutUs />
             {/* Sezione ChairSide*/}
             <ChairSideSection />
 
-            {/* Sezione Chi siamo */}
-            <AboutUs />
             {/* Sezione Servizi*/}
             <ServicesSection />
 

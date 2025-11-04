@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./Button";
 import Link from "next/link";
 import { withBasePath } from "../lib/basePath";
+import Image from "next/image";
 
 interface ChairsideCardProps {
     title?: string;
@@ -23,8 +24,20 @@ const ChairsideCard: React.FC<ChairsideCardProps> = ({
             className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center max-w-2xl w-full gap-0"
             data-aos="fade-up"
         >
-            {/* Video Section */}
-            <div className="relative flex-shrink-0 hidden lg:block w-full aspect-video">
+            {/* Image for Mobile, Video for Desktop */}
+            <div className="relative flex-shrink-0 w-full aspect-video">
+                {/* Mobile Image */}
+                <div className="lg:hidden w-full h-full">
+                    <Image
+                        src={videoPoster}
+                        alt={videoAlt}
+                        fill
+                        className="object-cover rounded-t-2xl"
+                        sizes="(max-width: 1024px) 100vw, 672px"
+                    />
+                </div>
+
+                {/* Desktop Video */}
                 <video
                     src={videoSrc}
                     poster={videoPoster}
@@ -33,7 +46,7 @@ const ChairsideCard: React.FC<ChairsideCardProps> = ({
                     muted
                     playsInline
                     preload="metadata"
-                    className="h-full w-full object-cover rounded-t-2xl"
+                    className="hidden lg:block h-full w-full object-cover rounded-t-2xl"
                     aria-label={videoAlt}
                     title={title}
                 >

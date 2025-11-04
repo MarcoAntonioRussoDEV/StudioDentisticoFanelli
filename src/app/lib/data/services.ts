@@ -117,7 +117,8 @@ export const services: Service[] = [
     },
     {
         title: "Laser",
-        description: "Trattamenti dentali con tecnologia laser avanzata",
+        description:
+            "Tecnologia laser avanzata per trattamenti precisi, indolori e risultati duraturi",
         icon: withBasePath("/images/icons/laser.svg"),
         url: "/services/laser",
         slug: "laser",
