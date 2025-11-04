@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/static/
+Disallow: /_next/image/
+
+# Sitemap
+Sitemap: https://marcoantoniorussodev.github.io/StudioDentisticoFanelli/sitemap.xml
