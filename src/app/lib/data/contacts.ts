@@ -16,7 +16,7 @@ export const contacts = [
     {
         icon: Mail,
         label: "Email",
-        value: "info@studiodentisticofanelli.it",
+        value: "Studioodontoiatricofanelli@gmail.com",
         description: "Rispondiamo entro 24 ore",
     },
     {

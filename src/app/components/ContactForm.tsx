@@ -4,6 +4,7 @@ import React, { FormEvent, useRef, useState } from "react";
 import Button from "./Button";
 import emailjs from "@emailjs/browser";
 import { Mail, Phone, User, MessageSquare } from "lucide-react";
+import Link from "next/link";
 
 // Dichiarazione TypeScript per gtag
 declare global {
@@ -305,6 +306,16 @@ const ContactForm = () => {
                         )}
                     </Button>
                 </div>
+
+                <p className="text-xs text-gray-500 text-center mt-4">
+                    Inviando questo form accetti la nostra{" "}
+                    <Link
+                        href="/privacy-policy"
+                        className="text-primary hover:underline font-semibold"
+                    >
+                        Informativa Privacy
+                    </Link>
+                </p>
             </form>
         </div>
     );

@@ -80,7 +80,7 @@ const page = () => {
         {
             title: "Implantologia e Chirurgia Laser",
             description:
-                "Scoperta impianti, decontaminazione, frenulectomia, gengivoplastica, emostasi e papillectomia. Interventi chirurgici minimamente invasivi con precisione millimetrica e recupero rapido.",
+                "Scopertura impianti, decontaminazione, frenulectomia, gengivoplastica, emostasi e papillectomia. Interventi chirurgici minimamente invasivi con precisione millimetrica e recupero rapido.",
             frequency:
                 "Durante procedure implantologiche o interventi di chirurgia orale su necessità.",
             recommended:

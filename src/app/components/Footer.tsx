@@ -110,17 +110,27 @@ const Footer = () => {
                 </section>
             </article>
             <div className="container mx-auto border-b  border-white my-8"></div>
-            <p className="text-center text-sm text-gray-400 mt-8">
-                &copy; {new Date().getFullYear()}{" "}
-                <Link
-                    href="https://www.linkedin.com/in/marco-antonio-russo/"
-                    className="underline hover:text-primary"
-                    target="_blank"
-                >
-                    Marco Antonio Russo
-                </Link>
-                . Tutti i diritti riservati.
-            </p>
+            <div className="text-center text-sm text-gray-400 mt-8 space-y-2">
+                <p>
+                    &copy; {new Date().getFullYear()}{" "}
+                    <Link
+                        href="https://www.linkedin.com/in/marco-antonio-russo/"
+                        className="underline hover:text-primary"
+                        target="_blank"
+                    >
+                        Marco Antonio Russo
+                    </Link>
+                    . Tutti i diritti riservati.
+                </p>
+                <p>
+                    <Link
+                        href="/privacy-policy"
+                        className="underline hover:text-primary"
+                    >
+                        Informativa Privacy
+                    </Link>
+                </p>
+            </div>
         </footer>
     );
 };

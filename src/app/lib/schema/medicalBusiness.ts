@@ -8,7 +8,7 @@ export const medicalBusinessSchema = {
     logo: "https://studiodentisticofanelli.it/images/logo-fanelli.svg",
     image: "https://studiodentisticofanelli.it/images/open-graph.png",
     telephone: "+390881635896",
-    email: "info@studiodentisticofanelli.it",
+    email: "Studioodontoiatricofanelli@gmail.com",
     address: {
         "@type": "PostalAddress",
         streetAddress: "Via Padre Antonio da Olivadi, 9",
